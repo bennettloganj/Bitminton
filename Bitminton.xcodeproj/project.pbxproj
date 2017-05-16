@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9341C471ECB281600CCFD99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C461ECB281600CCFD99 /* AppDelegate.swift */; };
+		B9341C491ECB281600CCFD99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C481ECB281600CCFD99 /* ViewController.swift */; };
+		B9341C4C1ECB281600CCFD99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9341C4A1ECB281600CCFD99 /* Main.storyboard */; };
+		B9341C4E1ECB281600CCFD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9341C4D1ECB281600CCFD99 /* Assets.xcassets */; };
+		B9341C511ECB281600CCFD99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9341C4F1ECB281600CCFD99 /* LaunchScreen.storyboard */; };
+		B9341C5C1ECB281600CCFD99 /* BitmintonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C5B1ECB281600CCFD99 /* BitmintonTests.swift */; };
+		B9341C671ECB281600CCFD99 /* BitmintonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C661ECB281600CCFD99 /* BitmintonUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9341C581ECB281600CCFD99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9341C3B1ECB281600CCFD99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9341C421ECB281600CCFD99;
+			remoteInfo = Bitminton;
+		};
+		B9341C631ECB281600CCFD99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9341C3B1ECB281600CCFD99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9341C421ECB281600CCFD99;
+			remoteInfo = Bitminton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B9341C431ECB281600CCFD99 /* Bitminton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitminton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9341C461ECB281600CCFD99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B9341C481ECB281600CCFD99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9341C4B1ECB281600CCFD99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B9341C4D1ECB281600CCFD99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B9341C501ECB281600CCFD99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B9341C521ECB281600CCFD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9341C571ECB281600CCFD99 /* BitmintonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitmintonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9341C5B1ECB281600CCFD99 /* BitmintonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmintonTests.swift; sourceTree = "<group>"; };
+		B9341C5D1ECB281600CCFD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9341C621ECB281600CCFD99 /* BitmintonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitmintonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9341C661ECB281600CCFD99 /* BitmintonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmintonUITests.swift; sourceTree = "<group>"; };
+		B9341C681ECB281600CCFD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9341C401ECB281600CCFD99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9341C541ECB281600CCFD99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9341C5F1ECB281600CCFD99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9341C3A1ECB281600CCFD99 = {
+			isa = PBXGroup;
+			children = (
+				B9341C451ECB281600CCFD99 /* Bitminton */,
+				B9341C5A1ECB281600CCFD99 /* BitmintonTests */,
+				B9341C651ECB281600CCFD99 /* BitmintonUITests */,
+				B9341C441ECB281600CCFD99 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B9341C441ECB281600CCFD99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9341C431ECB281600CCFD99 /* Bitminton.app */,
+				B9341C571ECB281600CCFD99 /* BitmintonTests.xctest */,
+				B9341C621ECB281600CCFD99 /* BitmintonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9341C451ECB281600CCFD99 /* Bitminton */ = {
+			isa = PBXGroup;
+			children = (
+				B9341C461ECB281600CCFD99 /* AppDelegate.swift */,
+				B9341C481ECB281600CCFD99 /* ViewController.swift */,
+				B9341C4A1ECB281600CCFD99 /* Main.storyboard */,
+				B9341C4D1ECB281600CCFD99 /* Assets.xcassets */,
+				B9341C4F1ECB281600CCFD99 /* LaunchScreen.storyboard */,
+				B9341C521ECB281600CCFD99 /* Info.plist */,
+			);
+			path = Bitminton;
+			sourceTree = "<group>";
+		};
+		B9341C5A1ECB281600CCFD99 /* BitmintonTests */ = {
+			isa = PBXGroup;
+			children = (
+				B9341C5B1ECB281600CCFD99 /* BitmintonTests.swift */,
+				B9341C5D1ECB281600CCFD99 /* Info.plist */,
+			);
+			path = BitmintonTests;
+			sourceTree = "<group>";
+		};
+		B9341C651ECB281600CCFD99 /* BitmintonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B9341C661ECB281600CCFD99 /* BitmintonUITests.swift */,
+				B9341C681ECB281600CCFD99 /* Info.plist */,
+			);
+			path = BitmintonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9341C421ECB281600CCFD99 /* Bitminton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9341C6B1ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "Bitminton" */;
+			buildPhases = (
+				B9341C3F1ECB281600CCFD99 /* Sources */,
+				B9341C401ECB281600CCFD99 /* Frameworks */,
+				B9341C411ECB281600CCFD99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bitminton;
+			productName = Bitminton;
+			productReference = B9341C431ECB281600CCFD99 /* Bitminton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B9341C561ECB281600CCFD99 /* BitmintonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9341C6E1ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "BitmintonTests" */;
+			buildPhases = (
+				B9341C531ECB281600CCFD99 /* Sources */,
+				B9341C541ECB281600CCFD99 /* Frameworks */,
+				B9341C551ECB281600CCFD99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9341C591ECB281600CCFD99 /* PBXTargetDependency */,
+			);
+			name = BitmintonTests;
+			productName = BitmintonTests;
+			productReference = B9341C571ECB281600CCFD99 /* BitmintonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B9341C611ECB281600CCFD99 /* BitmintonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9341C711ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "BitmintonUITests" */;
+			buildPhases = (
+				B9341C5E1ECB281600CCFD99 /* Sources */,
+				B9341C5F1ECB281600CCFD99 /* Frameworks */,
+				B9341C601ECB281600CCFD99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9341C641ECB281600CCFD99 /* PBXTargetDependency */,
+			);
+			name = BitmintonUITests;
+			productName = BitmintonUITests;
+			productReference = B9341C621ECB281600CCFD99 /* BitmintonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9341C3B1ECB281600CCFD99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = LunarLincoln;
+				TargetAttributes = {
+					B9341C421ECB281600CCFD99 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					B9341C561ECB281600CCFD99 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B9341C421ECB281600CCFD99;
+					};
+					B9341C611ECB281600CCFD99 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B9341C421ECB281600CCFD99;
+					};
+				};
+			};
+			buildConfigurationList = B9341C3E1ECB281600CCFD99 /* Build configuration list for PBXProject "Bitminton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B9341C3A1ECB281600CCFD99;
+			productRefGroup = B9341C441ECB281600CCFD99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9341C421ECB281600CCFD99 /* Bitminton */,
+				B9341C561ECB281600CCFD99 /* BitmintonTests */,
+				B9341C611ECB281600CCFD99 /* BitmintonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9341C411ECB281600CCFD99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9341C511ECB281600CCFD99 /* LaunchScreen.storyboard in Resources */,
+				B9341C4E1ECB281600CCFD99 /* Assets.xcassets in Resources */,
+				B9341C4C1ECB281600CCFD99 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9341C551ECB281600CCFD99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9341C601ECB281600CCFD99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9341C3F1ECB281600CCFD99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9341C491ECB281600CCFD99 /* ViewController.swift in Sources */,
+				B9341C471ECB281600CCFD99 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9341C531ECB281600CCFD99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9341C5C1ECB281600CCFD99 /* BitmintonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9341C5E1ECB281600CCFD99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9341C671ECB281600CCFD99 /* BitmintonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9341C591ECB281600CCFD99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9341C421ECB281600CCFD99 /* Bitminton */;
+			targetProxy = B9341C581ECB281600CCFD99 /* PBXContainerItemProxy */;
+		};
+		B9341C641ECB281600CCFD99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9341C421ECB281600CCFD99 /* Bitminton */;
+			targetProxy = B9341C631ECB281600CCFD99 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B9341C4A1ECB281600CCFD99 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9341C4B1ECB281600CCFD99 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B9341C4F1ECB281600CCFD99 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9341C501ECB281600CCFD99 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9341C691ECB281600CCFD99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B9341C6A1ECB281600CCFD99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9341C6C1ECB281600CCFD99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bitminton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarLincoln.Bitminton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B9341C6D1ECB281600CCFD99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bitminton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarLincoln.Bitminton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B9341C6F1ECB281600CCFD99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BitmintonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarLincoln.BitmintonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitminton.app/Bitminton";
+			};
+			name = Debug;
+		};
+		B9341C701ECB281600CCFD99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BitmintonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarLincoln.BitmintonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitminton.app/Bitminton";
+			};
+			name = Release;
+		};
+		B9341C721ECB281600CCFD99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BitmintonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarLincoln.BitmintonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Bitminton;
+			};
+			name = Debug;
+		};
+		B9341C731ECB281600CCFD99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BitmintonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarLincoln.BitmintonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Bitminton;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9341C3E1ECB281600CCFD99 /* Build configuration list for PBXProject "Bitminton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9341C691ECB281600CCFD99 /* Debug */,
+				B9341C6A1ECB281600CCFD99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9341C6B1ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "Bitminton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9341C6C1ECB281600CCFD99 /* Debug */,
+				B9341C6D1ECB281600CCFD99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9341C6E1ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "BitmintonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9341C6F1ECB281600CCFD99 /* Debug */,
+				B9341C701ECB281600CCFD99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9341C711ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "BitmintonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9341C721ECB281600CCFD99 /* Debug */,
+				B9341C731ECB281600CCFD99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9341C3B1ECB281600CCFD99 /* Project object */;
+}
