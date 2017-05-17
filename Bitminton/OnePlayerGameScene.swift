@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import GameplayKit
 
 let BallCategoryName = "ball"
 let PaddleCategoryName = "paddle"
@@ -15,14 +16,22 @@ let GameMessageName = "gameMessage"
 
 let BallCategory   : UInt32 = 0x1 << 0
 let BottomCategory : UInt32 = 0x1 << 1
-let BlockCategory  : UInt32 = 0x1 << 2
 let PaddleCategory : UInt32 = 0x1 << 3
 let BorderCategory : UInt32 = 0x1 << 4
 
+var strikeCount: Int = 0
+var scoreCount: Int = 0
 
 class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
     var isFingerOnPaddle = false
+    
+    lazy var gameState: GKStateMachine = GKStateMachine(states: [
+        WaitingForTap(scene: self),
+        Playing(scene: self),
+        GameOver(scene: self)])
+    
+    
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -30,11 +39,12 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         borderBody.friction = 0
         self.physicsBody = borderBody
         
+        
+        
         physicsWorld.gravity = CGVector(dx: 0.0, dy: 0.0)
         physicsWorld.contactDelegate = self
         
         let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
-        ball.physicsBody!.applyImpulse(CGVector(dx: 200.0, dy: -200.0))
         
         let paddle = childNode(withName: PaddleCategoryName) as! SKSpriteNode
         
@@ -50,12 +60,25 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         ball.physicsBody!.contactTestBitMask = BottomCategory
         
+        let gameMessage = SKSpriteNode(imageNamed: "TapToPlay")
+        gameMessage.name = GameMessageName
+        gameMessage.position = CGPoint(x: frame.midX, y: frame.midY+50)
+        gameMessage.zPosition = 4
+        gameMessage.setScale(0.0)
+        addChild(gameMessage)
+        
+        gameState.enter(WaitingForTap.self)
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
         // 1
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
+        
+        let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
+        let scoreCounter = childNode(withName: "ScoreCounter") as! SKLabelNode
+        
         // 2
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
@@ -67,18 +90,57 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         // 3
         if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == BottomCategory {
             print("Hit bottom. First contact has been made.")
+            print(strikeCount)
+            
+            let redStrikeOne = childNode(withName: "redStrikeOne") as! SKSpriteNode
+            let redStrikeTwo = childNode(withName: "redStrikeTwo") as! SKSpriteNode
+            let redStrikeThree = childNode(withName: "redStrikeThree") as! SKSpriteNode
+            
+            
+            
+            strikeCount += 1
+            
+            switch strikeCount {
+            case 1:
+                ball.position = CGPoint(x:0.1 , y:-32.59 )
+                redStrikeOne.zPosition = 5
+            case 2:
+                redStrikeTwo.zPosition = 5
+            case 3:
+                redStrikeThree.zPosition = 5
+                gameState.enter(GameOver.self)
+            default:
+                break
+            }
+            
         }
+        
+        if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == PaddleCategory {
+            print("Hit the paddle.")
+            scoreCount += 1
+            scoreCounter.text = String(scoreCount)
+        }
+        
     }
     
      override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first
-        let touchLocation = touch!.location(in: self)
-     
-        if let body = physicsWorld.body(at: touchLocation) {
-            if body.node!.name == PaddleCategoryName {
-                print("Began touch on paddle")
-                isFingerOnPaddle = true
+        switch gameState.currentState {
+        case is WaitingForTap:
+            gameState.enter(Playing.self)
+            isFingerOnPaddle = true
+            
+        case is Playing:
+            let touch = touches.first
+            let touchLocation = touch!.location(in: self)
+            
+            if let body = physicsWorld.body(at: touchLocation){
+                if body.node!.name == PaddleCategoryName {
+                    isFingerOnPaddle = true
+                }
             }
+            
+        default:
+            break
         }
      }
     
@@ -107,4 +169,28 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         isFingerOnPaddle = false
     }
     
+    override func update(_ currentTime: TimeInterval){
+        gameState.update(deltaTime: currentTime)
+    }
+    
+    /*func isGameWon() -> Bool{
+        
+    }*/
+    
+    func randomFloat(from: CGFloat, to: CGFloat) -> CGFloat {
+        let rand: CGFloat = CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+        return (rand) * (to - from) + from
+    }
+    
+    func randomDirection() -> CGFloat {
+        let speedFactor: CGFloat = 50.0
+        if randomFloat(from: 0.0, to: 100.0) >= 50 {
+            return -speedFactor
+        } else {
+            return speedFactor
+        }
+    }
+    
 }
+
+

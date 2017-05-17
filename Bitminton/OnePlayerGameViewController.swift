@@ -51,3 +51,15 @@ class OnePlayerGameViewController: UIViewController {
         return true
     }
 }
+
+
+/*
+ to reset a gameplay scene
+ supposed to be in scene that you are trying to restart
+ 
+ https://developerplayground.net/pong_swift_playground_ipad/
+ 
+let scene = GameScene(size: self.size) // Whichever scene you want to restart (and are in)
+let animation = SKTransition.crossFade(withDuration: 0.5) // ...Add transition if you like
+self.view?.presentScene(scene, transition: animation)
+*/
