@@ -534,6 +534,7 @@
 				B9341C6D1ECB281600CCFD99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9341C6E1ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "BitmintonTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +543,7 @@
 				B9341C701ECB281600CCFD99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9341C711ECB281600CCFD99 /* Build configuration list for PBXNativeTarget "BitmintonUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +552,7 @@
 				B9341C731ECB281600CCFD99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -59,6 +59,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         borderBody.categoryBitMask = BorderCategory
         
         ball.physicsBody!.contactTestBitMask = BottomCategory
+        paddle.physicsBody!.contactTestBitMask = BallCategory
         
         let gameMessage = SKSpriteNode(imageNamed: "TapToPlay")
         gameMessage.name = GameMessageName
@@ -76,7 +77,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
         
-        let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
+        //let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
         let scoreCounter = childNode(withName: "ScoreCounter") as! SKLabelNode
         
         // 2
@@ -88,8 +89,11 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         // 3
+        
+        
         if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == BottomCategory {
             print("Hit bottom. First contact has been made.")
+            //ball.position = CGPoint(x:0.1 , y:-32.59 )
             print(strikeCount)
             
             let redStrikeOne = childNode(withName: "redStrikeOne") as! SKSpriteNode
@@ -102,7 +106,6 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             
             switch strikeCount {
             case 1:
-                ball.position = CGPoint(x:0.1 , y:-32.59 )
                 redStrikeOne.zPosition = 5
             case 2:
                 redStrikeTwo.zPosition = 5
@@ -113,13 +116,15 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
                 break
             }
             
+        }else if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == PaddleCategory {
+            print("Hit Paddle")
+            var scoreValue: Int = Int(scoreCounter.text!)!
+            scoreValue += 1
+            scoreCounter.text = String(scoreValue)
         }
         
-        if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == PaddleCategory {
-            print("Hit the paddle.")
-            scoreCount += 1
-            scoreCounter.text = String(scoreCount)
-        }
+        
+        
         
     }
     
