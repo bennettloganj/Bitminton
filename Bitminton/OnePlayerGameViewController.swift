@@ -27,6 +27,7 @@ class OnePlayerGameViewController: UIViewController {
             scene.scaleMode = .aspectFit
             
             skView.presentScene(scene)
+            
         }
     }
     

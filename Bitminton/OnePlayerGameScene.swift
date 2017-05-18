@@ -20,6 +20,7 @@ let PaddleCategory : UInt32 = 0x1 << 3
 let BorderCategory : UInt32 = 0x1 << 4
 
 var strikeCount: Int = 0
+var strikeChange: Bool = false
 var scoreCount: Int = 0
 
 class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
@@ -48,7 +49,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         let paddle = childNode(withName: PaddleCategoryName) as! SKSpriteNode
         
-        let bottomRect = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 1)
+        let bottomRect = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 0.001)
         let bottom = SKNode()
         bottom.physicsBody = SKPhysicsBody(edgeLoopFrom: bottomRect)
         addChild(bottom)
@@ -60,6 +61,9 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         ball.physicsBody!.contactTestBitMask = BottomCategory
         paddle.physicsBody!.contactTestBitMask = BallCategory
+        
+        ball.physicsBody!.usesPreciseCollisionDetection = true
+        bottom.physicsBody!.usesPreciseCollisionDetection = true
         
         let gameMessage = SKSpriteNode(imageNamed: "TapToPlay")
         gameMessage.name = GameMessageName
@@ -73,14 +77,14 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        // 1
+        
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
         
-        //let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
+        
         let scoreCounter = childNode(withName: "ScoreCounter") as! SKLabelNode
         
-        // 2
+    
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
@@ -88,12 +92,14 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        // 3
+        
         
         
         if firstBody.categoryBitMask == BallCategory && secondBody.categoryBitMask == BottomCategory {
-            print("Hit bottom. First contact has been made.")
-            //ball.position = CGPoint(x:0.1 , y:-32.59 )
+            print("Hit bottom. ")
+            
+            
+            
             print(strikeCount)
             
             let redStrikeOne = childNode(withName: "redStrikeOne") as! SKSpriteNode
@@ -105,12 +111,15 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             strikeCount += 1
             
             switch strikeCount {
-            case 1:
-                redStrikeOne.zPosition = 5
             case 2:
+                redStrikeOne.zPosition = 5
+                strikeChange = true
+            case 4:
                 redStrikeTwo.zPosition = 5
-            case 3:
+                strikeChange = true
+            case 6:
                 redStrikeThree.zPosition = 5
+                strikeChange = true
                 gameState.enter(GameOver.self)
             default:
                 break
@@ -127,6 +136,8 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         
     }
+    
+    
     
      override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameState.currentState {
@@ -176,6 +187,18 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval){
         gameState.update(deltaTime: currentTime)
+        
+        let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
+        
+        if strikeChange {
+            ball.position = CGPoint(x:0.1 , y:-32.59 )
+            strikeChange = false
+        }
+        
+        if gameState is GameOver {
+            //transition to gameover screen
+            
+        }
     }
     
     /*func isGameWon() -> Bool{

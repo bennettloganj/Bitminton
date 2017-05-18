@@ -34,8 +34,8 @@ class Playing: GKState {
         let speed = sqrt(ball.physicsBody!.velocity.dx * ball.physicsBody!.velocity.dx + ball.physicsBody!.velocity.dy * ball.physicsBody!.velocity.dy)
         
         //
-        ball.physicsBody!.velocity.dx = ball.physicsBody!.velocity.dx*1.014
-        ball.physicsBody!.velocity.dy = ball.physicsBody!.velocity.dy*1.014
+        ball.physicsBody!.velocity.dx = ball.physicsBody!.velocity.dx*1.016
+        ball.physicsBody!.velocity.dy = ball.physicsBody!.velocity.dy*1.016
         
         if xSpeed <= 10.0 {
             ball.physicsBody!.applyImpulse(CGVector(dx: randomDirection(), dy: 0.0))
