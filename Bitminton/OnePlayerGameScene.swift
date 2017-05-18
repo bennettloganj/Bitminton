@@ -26,6 +26,7 @@ var scoreCount: Int = 0
 class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
     var isFingerOnPaddle = false
+    var viewController: UIViewController?
     
     lazy var gameState: GKStateMachine = GKStateMachine(states: [
         WaitingForTap(scene: self),
@@ -195,9 +196,10 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             strikeChange = false
         }
         
-        if gameState is GameOver {
+        if gameState.currentState is GameOver {
             //transition to gameover screen
-            
+            self.isPaused = true
+            self.viewController?.performSegue(withIdentifier: "SegueToGameOver", sender: viewController)
         }
     }
     

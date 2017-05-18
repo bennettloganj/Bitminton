@@ -20,6 +20,8 @@ class OnePlayerGameViewController: UIViewController {
             skView.showsFPS = true
             skView.showsNodeCount = true
             
+            scene.viewController = self
+            
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
             
@@ -29,6 +31,23 @@ class OnePlayerGameViewController: UIViewController {
             skView.presentScene(scene)
             
         }
+        
+        if shouldPerformSegue(withIdentifier: "SegueToGameOver", sender: self) {
+            performSegue(withIdentifier: "SegueToGameOver", sender: self)
+        }
+    }
+    
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+            let skView = self.view as! SKView
+            if (skView.scene?.isPaused)! {
+                return true
+            }
+            else {
+                return false
+            }
     }
     
     override var shouldAutorotate : Bool {
@@ -63,4 +82,9 @@ class OnePlayerGameViewController: UIViewController {
 let scene = GameScene(size: self.size) // Whichever scene you want to restart (and are in)
 let animation = SKTransition.crossFade(withDuration: 0.5) // ...Add transition if you like
 self.view?.presentScene(scene, transition: animation)
+ 
+ 
+ if (skView.scene?.isPaused)! {
+ performSegue(withIdentifier: "SegueToGameOver", sender: self)
+ }
 */
