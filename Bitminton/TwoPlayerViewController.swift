@@ -49,6 +49,25 @@ class TwoPlayerGameViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let skView = self.view as! SKView
+        let scene = skView.scene
+        
+        let p1lastStrike: SKSpriteNode = scene?.childNode(withName: "p1redStrikeThree") as! SKSpriteNode
+        
+        
+        if segue.identifier == "TwoPlayerSegueToGameOver" {
+            if let destination = segue.destination as? TwoPlayerGameOverViewController {
+                if p1lastStrike.zPosition > 3{
+                    destination.player1Won = false
+                }
+                else{
+                    destination.player1Won = true
+                }
+            }
+        }
+    }
+    
     
     
     override var shouldAutorotate : Bool {

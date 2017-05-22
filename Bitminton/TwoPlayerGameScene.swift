@@ -240,45 +240,6 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
-        
-        /*
-        if isFingerOnPaddle1 {
-            
-            let touch = touches.first
-            let touchLocation = touch!.location(in: self)
-            let previousLocation = touch!.previousLocation(in: self)
-            
-            let paddle1 = childNode(withName: Paddle1CategoryName) as! SKSpriteNode
-            
-            let paddleX = paddle1.position.x + (touchLocation.x - previousLocation.x)
-            
-            /*
-             paddleX = max(paddleX, paddle.size.width/2)
-             paddleX = min(paddleX, size.width - paddle.size.width/2)
-             */
-            
-            paddle1.position = CGPoint(x: paddleX, y: paddle1.position.y)
-        }
-        
-        if isFingerOnPaddle2 {
-            
-            let touch = touches.first
-            let touchLocation = touch!.location(in: self)
-            let previousLocation = touch!.previousLocation(in: self)
-            
-            let paddle2 = childNode(withName: Paddle2CategoryName) as! SKSpriteNode
-            
-            let paddleX = paddle2.position.x + (touchLocation.x - previousLocation.x)
-            
-            /*
-             paddleX = max(paddleX, paddle.size.width/2)
-             paddleX = min(paddleX, size.width - paddle.size.width/2)
-             */
-            
-            paddle2.position = CGPoint(x: paddleX, y: paddle2.position.y)
-        }
-        */
-        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

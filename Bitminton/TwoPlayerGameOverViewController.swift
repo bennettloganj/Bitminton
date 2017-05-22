@@ -12,6 +12,8 @@ class TwoPlayerGameOverViewController: UIViewController {
     
     var player1Won: Bool = false
     
+    @IBOutlet weak var WinnerLabel: UILabel!
+    
     @IBAction func menuButton(_ sender: UIButton) {
     }
     @IBAction func ReplayButton(_ sender: UIButton) {
@@ -21,7 +23,12 @@ class TwoPlayerGameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        if player1Won{
+            WinnerLabel.text = "Player 1 Wins"
+        }
+        else{
+            WinnerLabel.text = "Player 2 Wins"
+        }
     }
     
     override func didReceiveMemoryWarning() {

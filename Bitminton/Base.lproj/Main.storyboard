@@ -161,7 +161,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="WinnerLabel" destination="rmf-VA-pew" id="6vj-Xz-YFW"/>
+                        <outlet property="WinnerLabel" destination="rmf-VA-pew" id="l1f-a8-zaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-tN-cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
