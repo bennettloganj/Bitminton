@@ -1,33 +1,27 @@
 //
-//  GameOverViewController.swift
+//  TwoPlayerGameOverViewController.swift
 //  Bitminton
 //
-//  Created by LunarLincoln on 5/18/17.
+//  Created by LunarLincoln on 5/22/17.
 //  Copyright © 2017 LunarLincoln. All rights reserved.
 //
 
 import UIKit
 
-class GameOverViewController: UIViewController {
+class TwoPlayerGameOverViewController: UIViewController {
     
-    var stringPassed: String = ""
+    var player1Won: Bool = false
     
+    @IBAction func menuButton(_ sender: UIButton) {
+    }
     @IBAction func ReplayButton(_ sender: UIButton) {
-        
     }
-   
-    @IBAction func mainMenu(_ sender: UIButton) {
-        
-    }
-    
-    @IBOutlet weak var ScoreLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        ScoreLabel.text = stringPassed
     }
     
     override func didReceiveMemoryWarning() {

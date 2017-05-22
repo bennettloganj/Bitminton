@@ -1,19 +1,19 @@
 //
-//  Playing.swift
+//  TwoPlayerPlaying.swift
 //  Bitminton
 //
-//  Created by LunarLincoln on 5/16/17.
+//  Created by LunarLincoln on 5/22/17.
 //  Copyright © 2017 LunarLincoln. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 
-class Playing: GKState {
-    unowned let scene: OnePlayerGameScene
+class TwoPlayerPlaying: GKState {
+    unowned let scene: TwoPlayerGameScene
     
     init(scene: SKScene) {
-        self.scene = scene as! OnePlayerGameScene
+        self.scene = scene as! TwoPlayerGameScene
         super.init()
     }
     
@@ -52,7 +52,7 @@ class Playing: GKState {
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is GameOver.Type
+        return stateClass is TwoPlayerGameOver.Type
     }
     
     func randomDirection() -> CGFloat {

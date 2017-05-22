@@ -9,24 +9,27 @@
 import SpriteKit
 import GameplayKit
 
+
 let BallCategoryName = "ball"
 let PaddleCategoryName = "paddle"
 let BlockCategoryName = "block"
 let GameMessageName = "gameMessage"
 
-let BallCategory   : UInt32 = 0x1 << 0
-let BottomCategory : UInt32 = 0x1 << 1
-let PaddleCategory : UInt32 = 0x1 << 3
-let BorderCategory : UInt32 = 0x1 << 4
-
-var strikeCount: Int = 0
-var strikeChange: Bool = false
-var scoreCount: Int = 0
 
 class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
     var isFingerOnPaddle = false
     var viewController: UIViewController?
+
+    
+    let BallCategory   : UInt32 = 0x1 << 0
+    let BottomCategory : UInt32 = 0x1 << 1
+    let PaddleCategory : UInt32 = 0x1 << 3
+    let BorderCategory : UInt32 = 0x1 << 4
+    
+    private var strikeCount: Int = 0
+    private var strikeChange: Bool = false
+    var scoreCount: Int = 0
     
     lazy var gameState: GKStateMachine = GKStateMachine(states: [
         WaitingForTap(scene: self),
@@ -130,6 +133,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             print("Hit Paddle")
             var scoreValue: Int = Int(scoreCounter.text!)!
             scoreValue += 1
+            scoreCount += 1
             scoreCounter.text = String(scoreValue)
         }
         
@@ -199,6 +203,8 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         if gameState.currentState is GameOver {
             //transition to gameover screen
             self.isPaused = true
+            strikeCount = 0
+            
             self.viewController?.performSegue(withIdentifier: "SegueToGameOver", sender: viewController)
         }
     }

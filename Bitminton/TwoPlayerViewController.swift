@@ -1,24 +1,26 @@
 //
-//  OnePlayerGameViewController.swift
+//  TwoPlayerViewController.swift
 //  Bitminton
 //
-//  Created by LunarLincoln on 5/16/17.
+//  Created by LunarLincoln on 5/22/17.
 //  Copyright © 2017 LunarLincoln. All rights reserved.
 //
+
 
 import UIKit
 import SpriteKit
 
-class OnePlayerGameViewController: UIViewController {
+class TwoPlayerGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = OnePlayerGameScene(fileNamed:"OnePlayerGameScene") {
+        if let scene = TwoPlayerGameScene(fileNamed:"TwoPlayerGameScene") {
             // Configure the view.
             let skView = self.view as! SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
+            skView.isMultipleTouchEnabled = true
             
             scene.viewController = self
             
@@ -38,29 +40,16 @@ class OnePlayerGameViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-            let skView = self.view as! SKView
-            if (skView.scene?.isPaused)! {
-                return true
-            }
-            else {
-                return false
-            }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let skView = self.view as! SKView
-        let scene = skView.scene
-        
-        let scoreCounter: SKLabelNode = scene?.childNode(withName: "ScoreCounter") as! SKLabelNode
-                
-        let scoreValue: Int = Int(scoreCounter.text!)!
-        
-        if segue.identifier == "SegueToGameOver" {
-            if let destination = segue.destination as? GameOverViewController {
-                destination.stringPassed = String(scoreValue)
-            }
+        if (skView.scene?.isPaused)! {
+            return true
+        }
+        else {
+            return false
         }
     }
+    
+    
     
     override var shouldAutorotate : Bool {
         return true
@@ -83,20 +72,3 @@ class OnePlayerGameViewController: UIViewController {
         return true
     }
 }
-
-
-/*
- to reset a gameplay scene
- supposed to be in scene that you are trying to restart
- 
- https://developerplayground.net/pong_swift_playground_ipad/
- 
-let scene = GameScene(size: self.size) // Whichever scene you want to restart (and are in)
-let animation = SKTransition.crossFade(withDuration: 0.5) // ...Add transition if you like
-self.view?.presentScene(scene, transition: animation)
- 
- 
- if (skView.scene?.isPaused)! {
- performSegue(withIdentifier: "SegueToGameOver", sender: self)
- }
-*/

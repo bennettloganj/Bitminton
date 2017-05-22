@@ -43,7 +43,7 @@
                                 <state key="normal" title="Button" image="2player_button"/>
                                 <connections>
                                     <action selector="touchTwoPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9H-JN-J0z"/>
-                                    <segue destination="zLt-r6-Hmr" kind="show" id="W59-zc-KPw"/>
+                                    <segue destination="ahq-u2-lht" kind="show" id="yms-Aq-yiS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-AZ-ZAL">
@@ -83,23 +83,90 @@
             </objects>
             <point key="canvasLocation" x="116" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="mP0-sn-plJ">
+        <!--Two Player Game View Controller-->
+        <scene sceneID="zWH-mo-E5I">
             <objects>
-                <viewController id="zLt-r6-Hmr" sceneMemberID="viewController">
+                <viewController id="ahq-u2-lht" customClass="TwoPlayerGameViewController" customModule="Bitminton" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GaO-ck-QXy"/>
-                        <viewControllerLayoutGuide type="bottom" id="gZR-Z3-KCg"/>
+                        <viewControllerLayoutGuide type="top" id="rKh-N6-0Pm"/>
+                        <viewControllerLayoutGuide type="bottom" id="iVl-x1-aKH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zkc-J0-1J4">
+                    <view key="view" contentMode="scaleToFill" id="mih-rZ-Cic" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="ndM-SJ-Feu" kind="show" identifier="TwoPlayerSegueToGameOver" id="gco-Rs-KV1"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eqA-Bv-71q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcj-Vg-LoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276" y="-74"/>
+            <point key="canvasLocation" x="1289" y="-75"/>
+        </scene>
+        <!--Two Player Game Over View Controller-->
+        <scene sceneID="x4R-QE-Ekq">
+            <objects>
+                <viewController id="ndM-SJ-Feu" customClass="TwoPlayerGameOverViewController" customModule="Bitminton" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V0N-tI-jCl"/>
+                        <viewControllerLayoutGuide type="bottom" id="WJd-zo-LzS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cYn-sE-jfc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BadmintionPattern" translatesAutoresizingMaskIntoConstraints="NO" id="pbQ-S1-AT9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-2E-81P">
+                                <rect key="frame" x="62" y="496" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="MainMenuButton"/>
+                                <connections>
+                                    <action selector="menuButton:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="x6r-fr-Bcn"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="x4b-5m-cwN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46Z-E0-jln">
+                                <rect key="frame" x="62" y="438" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="PlayAgainButton"/>
+                                <connections>
+                                    <action selector="ReplayButton:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="WBX-4d-kPe"/>
+                                    <segue destination="ahq-u2-lht" kind="show" id="Enu-Ja-roa"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-ew-dx6">
+                                <rect key="frame" x="62" y="140" width="250" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Game Over!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcT-ME-4ES">
+                                <rect key="frame" x="62" y="154" width="250" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="72"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmf-VA-pew" userLabel="WinnerLabel">
+                                <rect key="frame" x="62" y="205" width="250" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="WinnerLabel" destination="rmf-VA-pew" id="6vj-Xz-YFW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-tN-cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2277.5999999999999" y="-66.11694152923539"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mrN-2b-DHw">
@@ -185,6 +252,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="PlayAgainButton"/>
                                 <connections>
+                                    <action selector="ReplayButton:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="V9Z-pO-Y4O"/>
                                     <segue destination="3c4-TC-7PM" kind="presentation" id="xRr-oC-aTD"/>
                                 </connections>
                             </button>
@@ -193,9 +261,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="MainMenuButton"/>
                                 <connections>
+                                    <action selector="mainMenu:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="VfU-QL-D6C"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="b6L-pP-50S"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oZ-Kc-gHA">
+                                <rect key="frame" x="77" y="171" width="220" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99989157920000005" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Game Over!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57i-zD-V3j">
                                 <rect key="frame" x="77" y="185" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,9 +277,26 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="72"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your score:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBB-zQ-er7">
+                                <rect key="frame" x="112" y="235" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-9T-dD4">
+                                <rect key="frame" x="122" y="273" width="131" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="52"/>
+                                <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="ScoreLabel" destination="e8p-9T-dD4" id="Utj-qM-7jc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOt-Nl-ZHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,6 +314,8 @@
         <image name="birdie_button" width="680" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s3c-Pf-lEA"/>
+        <segue reference="Enu-Ja-roa"/>
+        <segue reference="x4b-5m-cwN"/>
+        <segue reference="xRr-oC-aTD"/>
     </inferredMetricsTieBreakers>
 </document>
