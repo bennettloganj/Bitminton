@@ -198,7 +198,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
         
         if strikeChange {
-            ball.position = CGPoint(x:0.1 , y:-32.59 )
+            ball.position = CGPoint(x:0.1 , y:-32.59)
             strikeChange = false
         }
         
@@ -215,13 +215,14 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             var scoreArray = defaults.array(forKey: "scoreArray") as! [Int]
             var count = 0
             for score in scoreArray {
-                if score > scoreValue {
+                if scoreValue > score {
                     scoreArray.append(scoreValue)
                     scoreArray = rearrangeIntArray(array: scoreArray, fromIndex: scoreArray.count-1, toIndex: count)
                     scoreArray.remove(at: scoreArray.count-1)
                     defaults.set(scoreArray, forKey: "scoreArray")
+                    defaults.synchronize()
                     //add player name stuff
-                    
+                    break
                 }
                 count += 1
             }

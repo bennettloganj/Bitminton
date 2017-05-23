@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-r7-Dtr">
-                                <rect key="frame" x="0.0" y="-3" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-3" width="375" height="683"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -398,7 +398,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fSV-RU-Wwn"/>
-        <segue reference="xRr-oC-aTD"/>
-        <segue reference="Enu-Ja-roa"/>
+        <segue reference="s3c-Pf-lEA"/>
+        <segue reference="yms-Aq-yiS"/>
     </inferredMetricsTieBreakers>
 </document>

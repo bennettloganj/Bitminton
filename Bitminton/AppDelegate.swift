@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //do nothing the array already exists
         }
         else{
-            let array = Array(repeating: 0, count: 12)
+            let array = Array(repeating: 0, count: 13)
             defaults.set(array, forKey: "scoreArray")
         }
         return true
