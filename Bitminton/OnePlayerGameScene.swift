@@ -15,6 +15,8 @@ let PaddleCategoryName = "paddle"
 let BlockCategoryName = "block"
 let GameMessageName = "gameMessage"
 
+let scoreKeyConstant = "HighScores"
+
 
 class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -201,9 +203,28 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if gameState.currentState is GameOver {
+            
+            let scoreCounter = childNode(withName: "ScoreCounter") as! SKLabelNode
+            
             //transition to gameover screen
             self.isPaused = true
             strikeCount = 0
+            let scoreValue: Int = Int(scoreCounter.text!)!
+            
+            let defaults = UserDefaults.standard
+            var scoreArray = defaults.array(forKey: "scoreArray") as! [Int]
+            var count = 0
+            for score in scoreArray {
+                if score > scoreValue {
+                    scoreArray.append(scoreValue)
+                    scoreArray = rearrangeIntArray(array: scoreArray, fromIndex: scoreArray.count-1, toIndex: count)
+                    scoreArray.remove(at: scoreArray.count-1)
+                    defaults.set(scoreArray, forKey: "scoreArray")
+                    //add player name stuff
+                    
+                }
+                count += 1
+            }
             
             self.viewController?.performSegue(withIdentifier: "SegueToGameOver", sender: viewController)
         }
@@ -212,6 +233,15 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     /*func isGameWon() -> Bool{
         
     }*/
+    
+    func rearrangeIntArray(array: [Int], fromIndex: Int, toIndex: Int) -> [Int] {
+        
+        var temp = array
+        let item = temp.remove(at: fromIndex)
+        temp.insert(item, at: toIndex)
+        
+        return temp
+    }
     
     func randomFloat(from: CGFloat, to: CGFloat) -> CGFloat {
         let rand: CGFloat = CGFloat(Float(arc4random()) / 0xFFFFFFFF)

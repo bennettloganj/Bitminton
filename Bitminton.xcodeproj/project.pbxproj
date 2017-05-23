@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B92D5C721ED484BA0052D7ED /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */; };
 		B9341C471ECB281600CCFD99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C461ECB281600CCFD99 /* AppDelegate.swift */; };
 		B9341C491ECB281600CCFD99 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C481ECB281600CCFD99 /* MenuViewController.swift */; };
 		B9341C4C1ECB281600CCFD99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9341C4A1ECB281600CCFD99 /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		B9341C811ECBA19800CCFD99 /* Playing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C801ECBA19800CCFD99 /* Playing.swift */; };
 		B9341C831ECBA1D000CCFD99 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C821ECBA1D000CCFD99 /* GameOver.swift */; };
 		B93CA9171ECE070C0046A19A /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93CA9161ECE070C0046A19A /* GameOverViewController.swift */; };
-		B93CA9191ECE257B0046A19A /* BitmintionGameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93CA9181ECE257B0046A19A /* BitmintionGameplay.swift */; };
 		B9CE4F461ED3306A00186DEF /* TwoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE4F451ED3306A00186DEF /* TwoPlayerViewController.swift */; };
 		B9CE4F481ED3313900186DEF /* TwoPlayerGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CE4F471ED3313900186DEF /* TwoPlayerGameScene.sks */; };
 		B9CE4F4A1ED336FD00186DEF /* TwoPlayerGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE4F491ED336FD00186DEF /* TwoPlayerGameScene.swift */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		B9341C431ECB281600CCFD99 /* Bitminton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitminton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9341C461ECB281600CCFD99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9341C481ECB281600CCFD99 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		B9341C801ECBA19800CCFD99 /* Playing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playing.swift; path = ../Playing.swift; sourceTree = "<group>"; };
 		B9341C821ECBA1D000CCFD99 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOver.swift; path = ../GameOver.swift; sourceTree = "<group>"; };
 		B93CA9161ECE070C0046A19A /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		B93CA9181ECE257B0046A19A /* BitmintionGameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmintionGameplay.swift; sourceTree = "<group>"; };
 		B9CE4F451ED3306A00186DEF /* TwoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayerViewController.swift; sourceTree = "<group>"; };
 		B9CE4F471ED3313900186DEF /* TwoPlayerGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TwoPlayerGameScene.sks; sourceTree = "<group>"; };
 		B9CE4F491ED336FD00186DEF /* TwoPlayerGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayerGameScene.swift; sourceTree = "<group>"; };
@@ -128,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				B9341C4A1ECB281600CCFD99 /* Main.storyboard */,
+				B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */,
 				B9341C481ECB281600CCFD99 /* MenuViewController.swift */,
 				B93CA9161ECE070C0046A19A /* GameOverViewController.swift */,
 				B9CE4F531ED35F5700186DEF /* TwoPlayerGameOverViewController.swift */,
@@ -139,7 +140,6 @@
 				B9CE4F491ED336FD00186DEF /* TwoPlayerGameScene.swift */,
 				B9CE4F521ED33FE100186DEF /* TwoPlayerGameStates */,
 				B9CE4F4B1ED33F1300186DEF /* SinglePlayerGameStates */,
-				B93CA9181ECE257B0046A19A /* BitmintionGameplay.swift */,
 				B9341C461ECB281600CCFD99 /* AppDelegate.swift */,
 				B9341C4D1ECB281600CCFD99 /* Assets.xcassets */,
 				B9341C4F1ECB281600CCFD99 /* LaunchScreen.storyboard */,
@@ -326,13 +326,13 @@
 				B9CE4F461ED3306A00186DEF /* TwoPlayerViewController.swift in Sources */,
 				B9341C811ECBA19800CCFD99 /* Playing.swift in Sources */,
 				B9CE4F4A1ED336FD00186DEF /* TwoPlayerGameScene.swift in Sources */,
+				B92D5C721ED484BA0052D7ED /* HighScoreViewController.swift in Sources */,
 				B9341C7F1ECBA14100CCFD99 /* WaitingForTap.swift in Sources */,
 				B9CE4F4F1ED33FB600186DEF /* TwoPlayerPlaying.swift in Sources */,
 				B9341C831ECBA1D000CCFD99 /* GameOver.swift in Sources */,
 				B9CE4F4D1ED33F9A00186DEF /* TwoPlayerWaitingForTap.swift in Sources */,
 				B9CE4F541ED35F5700186DEF /* TwoPlayerGameOverViewController.swift in Sources */,
 				B9341C491ECB281600CCFD99 /* MenuViewController.swift in Sources */,
-				B93CA9191ECE257B0046A19A /* BitmintionGameplay.swift in Sources */,
 				B9CE4F511ED33FCC00186DEF /* TwoPlayerGameOver.swift in Sources */,
 				B93CA9171ECE070C0046A19A /* GameOverViewController.swift in Sources */,
 				B9341C751ECB64E700CCFD99 /* OnePlayerGameViewController.swift in Sources */,
