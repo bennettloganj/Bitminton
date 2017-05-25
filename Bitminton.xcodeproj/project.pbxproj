@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90227E41ED6176F004C9AC0 /* BirdieMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90227E31ED6176F004C9AC0 /* BirdieMenuViewController.swift */; };
+		B90228271ED753F2004C9AC0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90228261ED753F2004C9AC0 /* CoreData.framework */; };
+		B902282A1ED75437004C9AC0 /* Bitminton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B90228281ED75437004C9AC0 /* Bitminton.xcdatamodeld */; };
 		B92D5C721ED484BA0052D7ED /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */; };
 		B9341C471ECB281600CCFD99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C461ECB281600CCFD99 /* AppDelegate.swift */; };
 		B9341C491ECB281600CCFD99 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C481ECB281600CCFD99 /* MenuViewController.swift */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B90227E31ED6176F004C9AC0 /* BirdieMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdieMenuViewController.swift; sourceTree = "<group>"; };
+		B90228261ED753F2004C9AC0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B90228291ED75437004C9AC0 /* Bitminton.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bitminton.xcdatamodel; sourceTree = "<group>"; };
 		B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		B9341C431ECB281600CCFD99 /* Bitminton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitminton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9341C461ECB281600CCFD99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90228271ED753F2004C9AC0 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B90228251ED753F2004C9AC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B90228261ED753F2004C9AC0 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9341C3A1ECB281600CCFD99 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +126,7 @@
 				B9341C5A1ECB281600CCFD99 /* BitmintonTests */,
 				B9341C651ECB281600CCFD99 /* BitmintonUITests */,
 				B9341C441ECB281600CCFD99 /* Products */,
+				B90228251ED753F2004C9AC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +145,8 @@
 			children = (
 				B9341C4A1ECB281600CCFD99 /* Main.storyboard */,
 				B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */,
+				B90227E31ED6176F004C9AC0 /* BirdieMenuViewController.swift */,
+				B90228281ED75437004C9AC0 /* Bitminton.xcdatamodeld */,
 				B9341C481ECB281600CCFD99 /* MenuViewController.swift */,
 				B93CA9161ECE070C0046A19A /* GameOverViewController.swift */,
 				B9CE4F531ED35F5700186DEF /* TwoPlayerGameOverViewController.swift */,
@@ -335,7 +353,9 @@
 				B9341C491ECB281600CCFD99 /* MenuViewController.swift in Sources */,
 				B9CE4F511ED33FCC00186DEF /* TwoPlayerGameOver.swift in Sources */,
 				B93CA9171ECE070C0046A19A /* GameOverViewController.swift in Sources */,
+				B90227E41ED6176F004C9AC0 /* BirdieMenuViewController.swift in Sources */,
 				B9341C751ECB64E700CCFD99 /* OnePlayerGameViewController.swift in Sources */,
+				B902282A1ED75437004C9AC0 /* Bitminton.xcdatamodeld in Sources */,
 				B9341C771ECB652900CCFD99 /* OnePlayerGameScene.swift in Sources */,
 				B9341C471ECB281600CCFD99 /* AppDelegate.swift in Sources */,
 			);
@@ -607,6 +627,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B90228281ED75437004C9AC0 /* Bitminton.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B90228291ED75437004C9AC0 /* Bitminton.xcdatamodel */,
+			);
+			currentVersion = B90228291ED75437004C9AC0 /* Bitminton.xcdatamodel */;
+			path = Bitminton.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B9341C3B1ECB281600CCFD99 /* Project object */;
 }

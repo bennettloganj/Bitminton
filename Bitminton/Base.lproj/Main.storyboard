@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="122.78860569715144"/>
+            <point key="canvasLocation" x="-1004" y="133"/>
         </scene>
         <!--Two Player Game View Controller-->
         <scene sceneID="zWH-mo-E5I">
@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rcj-Vg-LoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="-75"/>
+            <point key="canvasLocation" x="750" y="-66"/>
         </scene>
         <!--Two Player Game Over View Controller-->
         <scene sceneID="x4R-QE-Ekq">
@@ -166,12 +166,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-tN-cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277.5999999999999" y="-66.11694152923539"/>
+            <point key="canvasLocation" x="1666" y="-66"/>
         </scene>
         <!--Birdies-->
         <scene sceneID="mrN-2b-DHw">
             <objects>
-                <viewController id="beO-G7-Sd4" sceneMemberID="viewController">
+                <viewController id="beO-G7-Sd4" customClass="BirdieMenuViewController" customModule="Bitminton" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Py6-lD-ntJ"/>
                         <viewControllerLayoutGuide type="bottom" id="SvN-fv-eGg"/>
@@ -179,6 +179,45 @@
                     <view key="view" contentMode="scaleToFill" id="j7i-WN-qw8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Birdie" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaj-iZ-ja6">
+                                <rect key="frame" x="112" y="72" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xec-2Y-VxK">
+                                <rect key="frame" x="16" y="110" width="343" height="537"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ULy-1d-Ets">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="birdieCell" id="ZLY-Jj-YE4" customClass="BirdieCollectionViewCell" customModule="Bitminton" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NewBirdie" translatesAutoresizingMaskIntoConstraints="NO" id="ipv-J6-rkw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="birdieImage" destination="ipv-J6-rkw" id="y5F-kJ-VFJ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Birdies" id="WNr-lO-ziK">
@@ -188,10 +227,32 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birdieCollection" destination="xec-2Y-VxK" id="yNg-oh-RVW"/>
+                        <outlet property="navBar" destination="WNr-lO-ziK" id="e40-Ue-ooa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-oq-FMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2300" y="624"/>
+            <point key="canvasLocation" x="1996" y="940.47976011994012"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QHX-6c-PLT">
+            <objects>
+                <viewController id="4YR-9b-1GP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IXu-p9-SLR"/>
+                        <viewControllerLayoutGuide type="bottom" id="pRI-fP-cjA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oM8-gp-vVb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nia-df-hGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3178" y="941"/>
         </scene>
         <!--Highscores-->
         <scene sceneID="gMD-cJ-J9m">
@@ -224,13 +285,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" id="NZd-OV-zji">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" id="NZd-OV-zji" customClass="scoreTableViewCell" customModule="Bitminton" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NZd-OV-zji" id="KY7-Vg-Wkz">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrd-0F-sdF">
+                                                    <rect key="frame" x="8" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-MZ-uBC">
+                                                    <rect key="frame" x="70" y="12" width="197" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47d-Ru-ePP">
+                                                    <rect key="frame" x="293" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerNameLabel" destination="fpP-MZ-uBC" id="Qob-N1-2s9"/>
+                                            <outlet property="playerScoreLabel" destination="47d-Ru-ePP" id="WV5-ZH-wOB"/>
+                                            <outlet property="rankNumber" destination="zrd-0F-sdF" id="fno-Hm-xm8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -255,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WF5-Mr-W36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2215.1999999999998" y="1371.3643178410796"/>
+            <point key="canvasLocation" x="-95.200000000000003" y="1587.256371814093"/>
         </scene>
         <!--One Player Game View Controller-->
         <scene sceneID="aBI-Ee-5W0">
@@ -276,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlS-6t-5TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276" y="-779.46026986506752"/>
+            <point key="canvasLocation" x="188" y="-968"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="LO4-z6-b9U">
@@ -347,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOt-Nl-ZHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2300" y="-770.46476761619192"/>
+            <point key="canvasLocation" x="1113" y="-968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gOf-0B-bVE">
@@ -365,7 +454,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKP-Q7-ISi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276" y="1371.3643178410796"/>
+            <point key="canvasLocation" x="-1004" y="1589"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ui3-v4-b8d">
@@ -383,7 +472,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arJ-tU-Q8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="612"/>
+            <point key="canvasLocation" x="1114" y="942"/>
         </scene>
     </scenes>
     <resources>
@@ -392,13 +481,14 @@
         <image name="BadmintionPattern" width="750" height="1334"/>
         <image name="HighScores_button" width="680" height="125"/>
         <image name="MainMenuButton" width="718" height="122"/>
+        <image name="NewBirdie" width="233" height="233"/>
         <image name="PlayAgainButton" width="718" height="122"/>
         <image name="badminton-facilities-18.07.04.loughborough.uk214-1" width="750" height="1334"/>
         <image name="birdie_button" width="680" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fSV-RU-Wwn"/>
-        <segue reference="s3c-Pf-lEA"/>
-        <segue reference="yms-Aq-yiS"/>
+        <segue reference="7uB-b7-XzQ"/>
+        <segue reference="Enu-Ja-roa"/>
+        <segue reference="xRr-oC-aTD"/>
     </inferredMetricsTieBreakers>
 </document>

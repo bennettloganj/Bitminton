@@ -10,9 +10,16 @@ import UIKit
 
 let defaults = UserDefaults.standard
 
+
+
+class scoreTableViewCell: UITableViewCell {
+    @IBOutlet weak var playerScoreLabel: UILabel!
+    @IBOutlet weak var playerNameLabel: UILabel!
+    @IBOutlet weak var rankNumber: UILabel!
+}
+
 class HighScoreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
     
     @IBOutlet weak var navBar: UINavigationBar!
     
@@ -20,6 +27,8 @@ class HighScoreViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     var scoreArray = defaults.array(forKey: "scoreArray") as! [Int]
+    var nameArray = defaults.array(forKey: "nameArray") as! [String]
+    
     let tableCellidentifier = "scoreCell"
     
     override func viewDidLoad() {
@@ -28,13 +37,16 @@ class HighScoreViewController: UIViewController, UITableViewDataSource, UITableV
         
         scoreTable.delegate = self
         scoreTable.dataSource = self
-        
+        let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = swiftcolor
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         //maybe use if something is added to the table
         scoreArray = defaults.array(forKey: "scoreArray") as! [Int]
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,10 +54,13 @@ class HighScoreViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = scoreTable.dequeueReusableCell(withIdentifier: tableCellidentifier, for: indexPath)
+        let cell = scoreTable.dequeueReusableCell(withIdentifier: tableCellidentifier, for: indexPath) as! scoreTableViewCell
         
         let row = indexPath.row
-        cell.textLabel?.text = String(scoreArray[row])
+        var ranks: [String] = ["1.", "2.", "3.", "4.", "5.", "6.", "7.", "8.", "9.", "10.", "11.", "12.", "13."]
+        cell.playerScoreLabel?.text = String(scoreArray[row])
+        cell.rankNumber?.text = ranks[row]
+        cell.playerNameLabel?.text = nameArray[row]
         
         return cell
     }

@@ -11,6 +11,7 @@ import SpriteKit
 
 class OnePlayerGameViewController: UIViewController {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +28,7 @@ class OnePlayerGameViewController: UIViewController {
             
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .aspectFit
+        
             
             skView.presentScene(scene)
             
@@ -58,6 +60,8 @@ class OnePlayerGameViewController: UIViewController {
         if segue.identifier == "SegueToGameOver" {
             if let destination = segue.destination as? GameOverViewController {
                 destination.stringPassed = String(scoreValue)
+                destination.count = scene?.value(forKey: "count") as! Int
+                destination.isHighScore = scene?.value(forKey: "newHighScore") as! Bool
             }
         }
     }

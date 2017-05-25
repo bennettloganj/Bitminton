@@ -21,6 +21,8 @@ let scoreKeyConstant = "HighScores"
 class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
     var isFingerOnPaddle = false
+    var newHighScore = false
+    var count = 0
     var viewController: UIViewController?
 
     
@@ -213,15 +215,16 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             
             let defaults = UserDefaults.standard
             var scoreArray = defaults.array(forKey: "scoreArray") as! [Int]
-            var count = 0
             for score in scoreArray {
                 if scoreValue > score {
+                    newHighScore = true
                     scoreArray.append(scoreValue)
                     scoreArray = rearrangeIntArray(array: scoreArray, fromIndex: scoreArray.count-1, toIndex: count)
                     scoreArray.remove(at: scoreArray.count-1)
                     defaults.set(scoreArray, forKey: "scoreArray")
                     defaults.synchronize()
                     //add player name stuff
+                    
                     break
                 }
                 count += 1
@@ -243,6 +246,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         return temp
     }
+    
     
     func randomFloat(from: CGFloat, to: CGFloat) -> CGFloat {
         let rand: CGFloat = CGFloat(Float(arc4random()) / 0xFFFFFFFF)
