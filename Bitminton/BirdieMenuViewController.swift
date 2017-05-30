@@ -33,8 +33,12 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     
     var birdieImages: [NSManagedObject] = []
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        
+        birdieCollection.delegate = self
+        birdieCollection.dataSource = self
+        
         // Do any additional setup after loading the view, typically from a nib.
         let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
         navigationController?.navigationBar.barTintColor = swiftcolor
@@ -61,7 +65,6 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(birdieImages.count)
         return birdieImages.count
         
     }
@@ -80,14 +83,14 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
             print("failed to fetch")
         }
         
+        let birdieObject = birdieImages[indexPath.row]
+        let birdieData = birdieObject.value(forKey: "birdieImage") as! NSData
         
-        var row = indexPath.row
-        
-        let birdie = birdieImages[indexPath.row]
+        let birdieImage = UIImage(data: birdieData as Data, scale: 1.0)
         
         // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "birdieCollectionCell", for: indexPath as IndexPath) as! BirdieCollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "birdieCell", for: indexPath as IndexPath) as! BirdieCollectionViewCell
+        cell.birdieImage.image = birdieImage
         
         
         return cell
@@ -131,6 +134,15 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         entity.setValue(defaultImageData, forKey: "birdieImage1")
  */
         
+    }
+    
+    func layoutCells() {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+        layout.minimumInteritemSpacing = 5.0
+        layout.minimumLineSpacing = 5.0
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.size.width - 40)/3, height: ((UIScreen.main.bounds.size.width - 40)/3))
+        birdieCollection!.collectionViewLayout = layout
     }
     
     
