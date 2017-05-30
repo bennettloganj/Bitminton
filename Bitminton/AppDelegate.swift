@@ -18,7 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
         let defaults = UserDefaults.standard
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
         if let key = UserDefaults.standard.object(forKey: "scoreArray"){
             //do nothing the arrays already exists
         }
@@ -31,21 +34,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // do nothing
         }
         else{
-            let nameArray: [String] = Array(repeating: "AAA", count: 13)
+            let nameArray: [String] = Array(repeating: "---", count: 13)
             defaults.set(nameArray, forKey: "nameArray")
         }
         
-        /*
-        if let key = UserDefaults.standard.object(forKey: "birdieImageArray"){
-            // do nothing
+        if let key = UserDefaults.standard.object(forKey: "hasInitializedBirdieImages") {
+            
         }
         else{
-            var birdieImageArray: [UIImage] = []
-            birdieImageArray.append(UIImage(named: "PlainBirdieYellow.jpg")!)
-            birdieImageArray.append(UIImage(named: "NewBirdie.jpg")!)
-        
+            let hasInitializedBirdieImages = true
+            defaults.set(hasInitializedBirdieImages, forKey: "hasInitializedBirdieImages")
+            
+            let newImage = UIImage(named: "NewBirdie")
+            let defaultImage = UIImage(named: "PlainBirdieYellow")
+            let defaultImageData: NSData = UIImageJPEGRepresentation(defaultImage!, 1.0)! as NSData
+            let newImageData: NSData = UIImageJPEGRepresentation(newImage!, 1.0)! as NSData
+            
+            let entity =  NSEntityDescription.insertNewObject(forEntityName: "Birdie", into: context) as! Birdie
+            entity.birdieImage = newImageData
+            
+            let entity2 =  NSEntityDescription.insertNewObject(forEntityName: "Birdie", into: context) as! Birdie
+            entity2.birdieImage = defaultImageData
+            
+            
+            do{
+                try context.save()
+            } catch {
+                print("Failed to save")
+            }
         }
-         */
+        
+        
 
         return true
     }

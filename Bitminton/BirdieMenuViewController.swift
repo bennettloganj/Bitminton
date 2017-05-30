@@ -9,6 +9,13 @@
 import UIKit
 import CoreData
 
+
+class birdieImage: NSManagedObject {
+    
+    @NSManaged var images: [UIImage]
+    
+}
+
 class BirdieCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var birdieImage: UIImageView!
@@ -26,11 +33,26 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     
     var birdieImages: [NSManagedObject] = []
     
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
         navigationController?.navigationBar.barTintColor = swiftcolor
+            
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Birdie")
+            
+        do{
+            birdieImages = try context.fetch(fetchRequest) as! [NSManagedObject]
+        } catch {
+            print("Failed to fetch")
+        }
+            
+        print("Size of the fetched birdieImages Array \(birdieImages.count)" )
+        
+            
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,20 +61,34 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        print(birdieImages.count)
+        return birdieImages.count
+        
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //let birdie = birdieImages[indexPath.row]
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Birdie")
+        
+        //learn to fetch
+        do{
+            birdieImages = try context.fetch(fetchRequest) as! [NSManagedObject]
+        }
+        catch{
+            print("failed to fetch")
+        }
+        
+        
+        var row = indexPath.row
+        
+        let birdie = birdieImages[indexPath.row]
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "birdieCollectionCell", for: indexPath as IndexPath) as! BirdieCollectionViewCell
         
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        //cell.birdieImage.image = birdie.value(forKey: "birdieImage") as? UIImage
-        //
+        
         
         return cell
     }
@@ -74,16 +110,26 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         
         let entity = NSEntityDescription.entity(forEntityName: "Birdie", in: managedContext)!
         
-        let birdie = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        birdie.setValue(image, forKeyPath: "birdieImage")
+        //entity.setValue(image, forKey: "birdieImage"\i)
         
         do {
             try managedContext.save()
-            birdieImages.append(birdie)
+            //birdieImages.append(birdie)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        
+        /*
+        let newImage = UIImage(named: "NewBirdie")
+        let defaultImage = UIImage(named: "PlainBirdieYellow")
+        let defaultImageData: NSData = UIImageJPEGRepresentation(defaultImage!, 1.0) as! NSData
+        let newImageData: NSData = UIImageJPEGRepresentation(newImage!, 1.0) as! NSData
+        
+        let entity =  NSEntityDescription.insertNewObject(forEntityName: "Birdie", into: context)
+        //entity.birdieImage1 = newImageData
+        entity.setValue(newImageData, forKey: "birdieImage2")
+        entity.setValue(defaultImageData, forKey: "birdieImage1")
+ */
         
     }
     
