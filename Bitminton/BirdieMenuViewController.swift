@@ -119,7 +119,7 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         let selectedImageData: NSData = UIImageJPEGRepresentation(selectedImage!, 1.0)! as NSData
     
         
-        if birdieImages.count-1 == indexPath.item {
+        if 0 == indexPath.item {
             //perform segue to screen for new image adding
             self.performSegue(withIdentifier: "SelectAPhoto", sender: self)
         }

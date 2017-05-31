@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotoSelectorViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
@@ -27,17 +28,31 @@ UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             currentImage.contentMode = .scaleAspectFit
-            currentImage.image = pickedImage
+            currentImage.image = pickedImage.circleMasked
         }
         self.dismiss(animated: true, completion: nil);
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
-        let imageData = UIImageJPEGRepresentation(currentImage.image!, 0.6)
-        let compressedJPGImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        let imageData = UIImageJPEGRepresentation(currentImage.image!.circleMasked!, 1.0)! as NSData
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let entity =  NSEntityDescription.insertNewObject(forEntityName: "Birdie", into: context) as! Birdie
+        entity.birdieImage = imageData
+        
+        do{
+            try context.save()
+        } catch {
+            print("Failed to save")
+        }
+        
         
         let alert = UIAlertController(title: "Great Choice", message: "Your photo has been saved", preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(doneAction)
+        
         self.present(alert, animated: false, completion: nil)
     }
     

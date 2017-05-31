@@ -47,6 +47,14 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
+        let birdieImageData = defaults.data(forKey: "currentPlayBirdie")
+        let birdieImage = UIImage(data: birdieImageData!, scale: 1.0)
+        
+        let balltexture = SKTexture(image: (birdieImage?.circleMasked!)!)
+        
+        
+        ball.texture = balltexture
+        
         
         let paddle1 = childNode(withName: Paddle1CategoryName) as! SKSpriteNode
         let paddle2 = childNode(withName: Paddle2CategoryName) as! SKSpriteNode
