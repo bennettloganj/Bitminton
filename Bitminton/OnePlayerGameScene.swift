@@ -12,6 +12,8 @@ import GameplayKit
 
 let BallCategoryName = "ball"
 let PaddleCategoryName = "paddle"
+let lowerHalfName = "lowerHalf"
+let upperAreaName = "upperHalf"
 let BlockCategoryName = "block"
 let GameMessageName = "gameMessage"
 
@@ -30,6 +32,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     let BottomCategory : UInt32 = 0x1 << 1
     let PaddleCategory : UInt32 = 0x1 << 3
     let BorderCategory : UInt32 = 0x1 << 4
+    let LowerHalfCategory : UInt32 = 0x1 << 5
     
     private var strikeCount: Int = 0
     private var strikeChange: Bool = false
@@ -64,11 +67,16 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         let paddle = childNode(withName: PaddleCategoryName) as! SKSpriteNode
         
+   
+        let lowerHalf = childNode(withName: "lowerHalf") as! SKSpriteNode
+        
         let bottomRect = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 0.001)
         let bottom = SKNode()
         bottom.physicsBody = SKPhysicsBody(edgeLoopFrom: bottomRect)
         addChild(bottom)
         
+        
+        lowerHalf.physicsBody!.categoryBitMask = LowerHalfCategory
         bottom.physicsBody!.categoryBitMask = BottomCategory
         ball.physicsBody!.categoryBitMask = BallCategory
         paddle.physicsBody!.categoryBitMask = PaddleCategory
@@ -76,6 +84,8 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         ball.physicsBody!.contactTestBitMask = BottomCategory
         paddle.physicsBody!.contactTestBitMask = BallCategory
+
+        ball.physicsBody!.collisionBitMask = BottomCategory | PaddleCategory | BorderCategory
         
         ball.physicsBody!.usesPreciseCollisionDetection = true
         bottom.physicsBody!.usesPreciseCollisionDetection = true
@@ -166,7 +176,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             let touchLocation = touch!.location(in: self)
             
             if let body = physicsWorld.body(at: touchLocation){
-                if body.node!.name == PaddleCategoryName {
+                if body.node!.name == lowerHalfName {
                     isFingerOnPaddle = true
                 }
             }

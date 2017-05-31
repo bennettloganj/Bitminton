@@ -19,6 +19,7 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
     var isFingerOnPaddle2 = false
     var viewController: UIViewController?
     
+    var selectedNodes: [UITouch:SKSpriteNode] = [:]
 
     let Paddle1CategoryName = "paddle1"
     let Paddle2CategoryName = "paddle2"
@@ -29,6 +30,8 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
     let BorderCategory : UInt32 = 0x1 << 3
     let Paddle1Category : UInt32 = 0x1 << 4
     let Paddle2Category : UInt32 = 0x1 << 5
+    let UpperHalfCategory : UInt32 = 0x1 << 6
+    let LowerHalfCategory : UInt32 = 0x1 << 7
     
     lazy var gameState: GKStateMachine = GKStateMachine(states: [
         TwoPlayerWaitingForTap(scene: self),
@@ -59,6 +62,9 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         let paddle1 = childNode(withName: Paddle1CategoryName) as! SKSpriteNode
         let paddle2 = childNode(withName: Paddle2CategoryName) as! SKSpriteNode
         
+        let lowerHalf = childNode(withName: "lowerHalf") as! SKSpriteNode
+        let upperHalf = childNode(withName: "upperHalf") as! SKSpriteNode
+        
         let bottomRect = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 0.001)
         let bottom = SKNode()
         bottom.physicsBody = SKPhysicsBody(edgeLoopFrom: bottomRect)
@@ -75,10 +81,14 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         paddle1.physicsBody!.categoryBitMask = Paddle1Category
         paddle2.physicsBody!.categoryBitMask = Paddle2Category
         borderBody.categoryBitMask = BorderCategory
+        lowerHalf.physicsBody!.categoryBitMask = LowerHalfCategory
+        upperHalf.physicsBody!.categoryBitMask = UpperHalfCategory
         
         ball.physicsBody!.contactTestBitMask = BottomCategory | TopCategory
         paddle1.physicsBody!.contactTestBitMask = BallCategory
         paddle2.physicsBody!.contactTestBitMask = BallCategory
+        
+        ball.physicsBody!.collisionBitMask = BottomCategory | TopCategory | Paddle1Category | Paddle2Category | BorderCategory
         
         ball.physicsBody!.usesPreciseCollisionDetection = true
         bottom.physicsBody!.usesPreciseCollisionDetection = true
@@ -189,12 +199,15 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
                 let touchLocation = touch.location(in:self)
                 
                 
-                if let body = physicsWorld.body(at: touchLocation){
-                    if body.node!.name == Paddle1CategoryName {
-                        isFingerOnPaddle1 = true
+                if let node = self.atPoint(touchLocation) as? SKSpriteNode{
+                    if node.name == lowerHalfName  {
+                        let paddle = childNode(withName: Paddle1CategoryName) as! SKSpriteNode
+                        selectedNodes[touch] = paddle
                     }
-                    if body.node!.name == Paddle2CategoryName {
-                        isFingerOnPaddle2 = true
+                    
+                    if node.name == upperAreaName  {
+                        let paddle = childNode(withName: Paddle2CategoryName) as! SKSpriteNode
+                        selectedNodes[touch] = paddle
                     }
                 }
             }
@@ -209,6 +222,14 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches{
             let touchLocation = touch.location(in: self)
             
+            
+            if let node = selectedNodes[touch] {
+                let previousLocation = touch.previousLocation(in:self)
+                let paddleX = node.position.x + (touchLocation.x - previousLocation.x)
+                node.position = CGPoint(x: paddleX, y: node.position.y)
+            }
+            
+            /*
             if let body = physicsWorld.body(at: touchLocation){
                 if body.node!.name == Paddle1CategoryName {
                     let touch = touches.first
@@ -243,6 +264,7 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
                     paddle2.position = CGPoint(x: paddleX, y: paddle2.position.y)
                 }
             }
+    */
             
          
         }
@@ -252,6 +274,12 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
+            
+            if selectedNodes[touch] != nil {
+                selectedNodes[touch] = nil
+            }
+            
+            /*
             let touchLocation = touch.location(in: self)
             
             if let body = physicsWorld.body(at: touchLocation){
@@ -262,6 +290,7 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
                     isFingerOnPaddle2 = false
                 }
             }
+             */
         }
     }
     
