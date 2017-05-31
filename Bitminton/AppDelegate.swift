@@ -56,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let entity2 =  NSEntityDescription.insertNewObject(forEntityName: "Birdie", into: context) as! Birdie
             entity2.birdieImage = defaultImageData
             
+            defaults.set(defaultImageData, forKey: "currentPlayBirdie")
             
             do{
                 try context.save()

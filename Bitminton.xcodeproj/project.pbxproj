@@ -25,6 +25,7 @@
 		B9341C811ECBA19800CCFD99 /* Playing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C801ECBA19800CCFD99 /* Playing.swift */; };
 		B9341C831ECBA1D000CCFD99 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C821ECBA1D000CCFD99 /* GameOver.swift */; };
 		B93CA9171ECE070C0046A19A /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93CA9161ECE070C0046A19A /* GameOverViewController.swift */; };
+		B956EB201EDE17840056AD92 /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B956EB1F1EDE17840056AD92 /* PhotoSelectorViewController.swift */; };
 		B9CE4F461ED3306A00186DEF /* TwoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE4F451ED3306A00186DEF /* TwoPlayerViewController.swift */; };
 		B9CE4F481ED3313900186DEF /* TwoPlayerGameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B9CE4F471ED3313900186DEF /* TwoPlayerGameScene.sks */; };
 		B9CE4F4A1ED336FD00186DEF /* TwoPlayerGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CE4F491ED336FD00186DEF /* TwoPlayerGameScene.swift */; };
@@ -76,6 +77,7 @@
 		B9341C801ECBA19800CCFD99 /* Playing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playing.swift; path = ../Playing.swift; sourceTree = "<group>"; };
 		B9341C821ECBA1D000CCFD99 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOver.swift; path = ../GameOver.swift; sourceTree = "<group>"; };
 		B93CA9161ECE070C0046A19A /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		B956EB1F1EDE17840056AD92 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 		B9CE4F451ED3306A00186DEF /* TwoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayerViewController.swift; sourceTree = "<group>"; };
 		B9CE4F471ED3313900186DEF /* TwoPlayerGameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TwoPlayerGameScene.sks; sourceTree = "<group>"; };
 		B9CE4F491ED336FD00186DEF /* TwoPlayerGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayerGameScene.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B9341C4A1ECB281600CCFD99 /* Main.storyboard */,
+				B956EB1F1EDE17840056AD92 /* PhotoSelectorViewController.swift */,
 				B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */,
 				B90227E31ED6176F004C9AC0 /* BirdieMenuViewController.swift */,
 				B90228281ED75437004C9AC0 /* Bitminton.xcdatamodeld */,
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B956EB201EDE17840056AD92 /* PhotoSelectorViewController.swift in Sources */,
 				B9CE4F461ED3306A00186DEF /* TwoPlayerViewController.swift in Sources */,
 				B9341C811ECBA19800CCFD99 /* Playing.swift in Sources */,
 				B9CE4F4A1ED336FD00186DEF /* TwoPlayerGameScene.swift in Sources */,

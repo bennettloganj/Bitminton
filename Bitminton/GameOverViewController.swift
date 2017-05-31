@@ -16,7 +16,10 @@ class GameOverViewController: UIViewController {
     var stringPassed: String = ""
     var name:String = ":("
     var isHighScore:Bool = false
-    var count:Int = 0;
+    var count:Int = 0
+    
+    let defaults = UserDefaults.standard
+    
     
     @IBAction func ReplayButton(_ sender: UIButton) {
         
@@ -37,8 +40,7 @@ class GameOverViewController: UIViewController {
         ScoreLabel.text = stringPassed
     }
     override func viewDidAppear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
-        var nameArray = defaults.array(forKey: "nameArray") as! [String]
+        
         
         
         if isHighScore {
@@ -60,12 +62,18 @@ class GameOverViewController: UIViewController {
             
             self.present(alertController, animated: true, completion: nil)
             
-            nameArray.append(name)
-            nameArray = rearrangeStringArray(array: nameArray, fromIndex: nameArray.count-1, toIndex: count)
-            nameArray.remove(at: nameArray.count-1)
-            defaults.set(nameArray, forKey: "nameArray")
             
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        
+        var nameArray = defaults.array(forKey: "nameArray") as! [String]
+        nameArray.append(name)
+        nameArray = rearrangeStringArray(array: nameArray, fromIndex: nameArray.count-1, toIndex: count)
+        nameArray.remove(at: nameArray.count-1)
+        defaults.set(nameArray, forKey: "nameArray")
     }
     
     override func didReceiveMemoryWarning() {

@@ -230,29 +230,62 @@
                     <connections>
                         <outlet property="birdieCollection" destination="xec-2Y-VxK" id="yNg-oh-RVW"/>
                         <outlet property="navBar" destination="WNr-lO-ziK" id="e40-Ue-ooa"/>
+                        <segue destination="sB6-RK-t4F" kind="show" identifier="SelectAPhoto" id="Q3g-IM-OZp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hd-oq-FMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1996" y="940.47976011994012"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="QHX-6c-PLT">
+        <!--Select a Photo-->
+        <scene sceneID="Cyc-C0-cJj">
             <objects>
-                <viewController id="4YR-9b-1GP" sceneMemberID="viewController">
+                <viewController id="sB6-RK-t4F" customClass="PhotoSelectorViewController" customModule="Bitminton" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IXu-p9-SLR"/>
-                        <viewControllerLayoutGuide type="bottom" id="pRI-fP-cjA"/>
+                        <viewControllerLayoutGuide type="top" id="l9Z-Pb-uyo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nat-qA-qfn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oM8-gp-vVb">
+                    <view key="view" contentMode="scaleToFill" id="XZz-sO-fmn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxd-6x-26n">
+                                <rect key="frame" x="164" y="481" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="CameraButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="vhS-Uc-Tvg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG9-KW-ya7">
+                                <rect key="frame" x="164" y="555" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="PhotoLibraryButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="qWG-hs-Adw"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-d9-wfB">
+                                <rect key="frame" x="67" y="140" width="240" height="273"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Select a Photo" id="bVd-ex-yBb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sw1-Z3-ggM">
+                            <connections>
+                                <segue destination="beO-G7-Sd4" kind="show" id="lDR-FY-quy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentImage" destination="G6Q-d9-wfB" id="n24-ki-4dw"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nia-df-hGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h2w-gh-Saq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3178" y="941"/>
+            <point key="canvasLocation" x="3999.1999999999998" y="940.47976011994012"/>
         </scene>
         <!--Highscores-->
         <scene sceneID="gMD-cJ-J9m">
@@ -474,6 +507,24 @@
             </objects>
             <point key="canvasLocation" x="1114" y="942"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DPF-y4-DPb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1tP-oN-tJh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c25-6a-AX8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sB6-RK-t4F" kind="relationship" relationship="rootViewController" id="LCs-2Z-d0T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXG-MJ-6UW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3060" y="939.58020989505258"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1player_button" width="680" height="125"/>
@@ -487,8 +538,10 @@
         <image name="birdie_button" width="680" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7uB-b7-XzQ"/>
-        <segue reference="Enu-Ja-roa"/>
         <segue reference="xRr-oC-aTD"/>
+        <segue reference="7uB-b7-XzQ"/>
+        <segue reference="7GR-fn-0Bh"/>
+        <segue reference="Q3g-IM-OZp"/>
+        <segue reference="Enu-Ja-roa"/>
     </inferredMetricsTieBreakers>
 </document>

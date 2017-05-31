@@ -54,6 +54,11 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
+        let birdieImageData = defaults.data(forKey: "currentPlayBirdie")
+        let birdieImage = UIImage(data: birdieImageData!, scale: 1.0)
+        let balltexture = SKTexture(image: birdieImage!)
+        
+        ball.texture = balltexture
         
         let paddle = childNode(withName: PaddleCategoryName) as! SKSpriteNode
         

@@ -55,7 +55,17 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
             
         print("Size of the fetched birdieImages Array \(birdieImages.count)" )
         
-            
+        let cellSize = CGSize(width:100 , height:100)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical //.horizontal
+        layout.itemSize = cellSize
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 10, bottom: 1, right: 10)
+        layout.minimumLineSpacing = 10.0
+        layout.minimumInteritemSpacing = 10.0
+        birdieCollection.setCollectionViewLayout(layout, animated: true)
+        
+        birdieCollection.reloadData()
         
     }
     
@@ -67,7 +77,9 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return birdieImages.count
         
+        
     }
+    
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -101,6 +113,23 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! BirdieCollectionViewCell
+        let selectedImage = cell.birdieImage.image
+        let selectedImageData: NSData = UIImageJPEGRepresentation(selectedImage!, 1.0)! as NSData
+        
+        let newImage = UIImage(named: "NewBirdie")
+        let newImageData: NSData = UIImageJPEGRepresentation(newImage!, 1.0)! as NSData
+        
+        if selectedImageData .isEqual(to: newImageData as Data) {
+            //perform segue to screen for new image adding
+            self.performSegue(withIdentifier: "SelectAPhoto", sender: self)
+        }
+        else {
+            //let user use selected birdie in gameplay
+            
+            defaults.set(selectedImageData, forKey: "currentPlayBirdie")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -136,14 +165,6 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         
     }
     
-    func layoutCells() {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
-        layout.minimumInteritemSpacing = 5.0
-        layout.minimumLineSpacing = 5.0
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.size.width - 40)/3, height: ((UIScreen.main.bounds.size.width - 40)/3))
-        birdieCollection!.collectionViewLayout = layout
-    }
     
     
 }
