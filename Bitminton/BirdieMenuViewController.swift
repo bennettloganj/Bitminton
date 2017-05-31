@@ -117,17 +117,14 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         let cell = collectionView.cellForItem(at: indexPath) as! BirdieCollectionViewCell
         let selectedImage = cell.birdieImage.image
         let selectedImageData: NSData = UIImageJPEGRepresentation(selectedImage!, 1.0)! as NSData
+    
         
-        let newImage = UIImage(named: "NewBirdie")
-        let newImageData: NSData = UIImageJPEGRepresentation(newImage!, 1.0)! as NSData
-        
-        if selectedImageData .isEqual(to: newImageData as Data) {
+        if birdieImages.count-1 == indexPath.item {
             //perform segue to screen for new image adding
             self.performSegue(withIdentifier: "SelectAPhoto", sender: self)
         }
         else {
             //let user use selected birdie in gameplay
-            
             defaults.set(selectedImageData, forKey: "currentPlayBirdie")
         }
     }
@@ -135,34 +132,6 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func saveImage(image: Data){
-        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Birdie", in: managedContext)!
-        
-        //entity.setValue(image, forKey: "birdieImage"\i)
-        
-        do {
-            try managedContext.save()
-            //birdieImages.append(birdie)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-        
-        /*
-        let newImage = UIImage(named: "NewBirdie")
-        let defaultImage = UIImage(named: "PlainBirdieYellow")
-        let defaultImageData: NSData = UIImageJPEGRepresentation(defaultImage!, 1.0) as! NSData
-        let newImageData: NSData = UIImageJPEGRepresentation(newImage!, 1.0) as! NSData
-        
-        let entity =  NSEntityDescription.insertNewObject(forEntityName: "Birdie", into: context)
-        //entity.birdieImage1 = newImageData
-        entity.setValue(newImageData, forKey: "birdieImage2")
-        entity.setValue(defaultImageData, forKey: "birdieImage1")
- */
-        
     }
     
     

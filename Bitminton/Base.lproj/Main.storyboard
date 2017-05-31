@@ -206,7 +206,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NewBirdie" translatesAutoresizingMaskIntoConstraints="NO" id="ipv-J6-rkw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -250,32 +250,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxd-6x-26n">
-                                <rect key="frame" x="164" y="481" width="46" height="30"/>
+                                <rect key="frame" x="87" y="467" width="200" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Open Camera"/>
                                 <connections>
                                     <action selector="CameraButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="vhS-Uc-Tvg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG9-KW-ya7">
-                                <rect key="frame" x="164" y="555" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="PhotoLibraryButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="qWG-hs-Adw"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-d9-wfB">
                                 <rect key="frame" x="67" y="140" width="240" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG9-KW-ya7">
+                                <rect key="frame" x="87" y="535" width="200" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Open Photo Library"/>
+                                <connections>
+                                    <action selector="PhotoLibraryButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="qWG-hs-Adw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select a Photo" id="bVd-ex-yBb">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sw1-Z3-ggM">
                             <connections>
+                                <action selector="cancelButton:" destination="sB6-RK-t4F" id="VK8-Lk-QBC"/>
                                 <segue destination="beO-G7-Sd4" kind="show" id="lDR-FY-quy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QDm-YM-XGM">
+                            <connections>
+                                <action selector="saveButton:" destination="sB6-RK-t4F" id="xFD-ed-z2X"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -538,10 +546,10 @@
         <image name="birdie_button" width="680" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xRr-oC-aTD"/>
-        <segue reference="7uB-b7-XzQ"/>
-        <segue reference="7GR-fn-0Bh"/>
-        <segue reference="Q3g-IM-OZp"/>
         <segue reference="Enu-Ja-roa"/>
+        <segue reference="7uB-b7-XzQ"/>
+        <segue reference="lDR-FY-quy"/>
+        <segue reference="Q3g-IM-OZp"/>
+        <segue reference="xRr-oC-aTD"/>
     </inferredMetricsTieBreakers>
 </document>
