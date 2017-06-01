@@ -30,13 +30,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BITMINTON" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-AF-yKO">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BITMINTON" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-AF-yKO">
                                 <rect key="frame" x="45" y="102" width="284" height="112"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <color key="textColor" red="0.598255455493927" green="0.73999661207199097" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="47"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="46"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-6F-XTj">
@@ -201,11 +201,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Birdie" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaj-iZ-ja6">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Birdie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaj-iZ-ja6">
                                 <rect key="frame" x="112" y="72" width="151" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -230,7 +231,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NewBirdie" translatesAutoresizingMaskIntoConstraints="NO" id="ipv-J6-rkw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="12" y="12" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -302,7 +303,6 @@
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="sw1-Z3-ggM">
                             <connections>
                                 <action selector="cancelButton:" destination="sB6-RK-t4F" id="VK8-Lk-QBC"/>
-                                <segue destination="beO-G7-Sd4" kind="show" id="lDR-FY-quy"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="QDm-YM-XGM">
@@ -313,6 +313,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentImage" destination="G6Q-d9-wfB" id="n24-ki-4dw"/>
+                        <segue destination="beO-G7-Sd4" kind="show" identifier="backToBirdiesSegue" id="jUy-gc-Fx2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2w-gh-Saq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,6 +427,7 @@
                     </view>
                     <connections>
                         <segue destination="MXt-3x-ZzA" kind="presentation" identifier="SegueToGameOver" id="qta-fZ-GCF"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="fromGameToMenuSegue" id="B7k-Uo-J8L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlS-6t-5TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,6 +559,23 @@
             </objects>
             <point key="canvasLocation" x="3060" y="939.58020989505258"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hB3-Qp-eQz">
+            <objects>
+                <viewController id="Aiu-N9-eTh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Fh-PO-1xQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="9rX-0c-gy4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0fh-MR-wgm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51t-kZ-gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="1player_button" width="680" height="125"/>
@@ -570,10 +589,10 @@
         <image name="birdie_button" width="680" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7uB-b7-XzQ"/>
-        <segue reference="lDR-FY-quy"/>
-        <segue reference="Q3g-IM-OZp"/>
         <segue reference="s3c-Pf-lEA"/>
+        <segue reference="B7k-Uo-J8L"/>
         <segue reference="yms-Aq-yiS"/>
+        <segue reference="Q3g-IM-OZp"/>
+        <segue reference="jUy-gc-Fx2"/>
     </inferredMetricsTieBreakers>
 </document>

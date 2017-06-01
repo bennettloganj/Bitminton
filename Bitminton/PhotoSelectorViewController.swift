@@ -49,13 +49,7 @@ UINavigationControllerDelegate {
             print("Failed to save")
         }
         
-        
-        let alert = UIAlertController(title: "Great Choice", message: "Your photo has been saved", preferredStyle: .alert)
-        let doneAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
-        alert.addAction(doneAction)
-        
-        self.present(alert, animated: false, completion: nil)
+        self.performSegue(withIdentifier: "backToBirdiesSegue", sender: self)
     }
     
     

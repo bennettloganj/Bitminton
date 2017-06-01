@@ -18,8 +18,6 @@ class TwoPlayerGameViewController: UIViewController {
         if let scene = TwoPlayerGameScene(fileNamed:"TwoPlayerGameScene") {
             // Configure the view.
             let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
             skView.isMultipleTouchEnabled = true
             
             scene.viewController = self

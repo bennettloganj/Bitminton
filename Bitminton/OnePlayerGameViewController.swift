@@ -18,8 +18,6 @@ class OnePlayerGameViewController: UIViewController {
         if let scene = OnePlayerGameScene(fileNamed:"OnePlayerGameScene") {
             // Configure the view.
             let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
             
             scene.viewController = self
             

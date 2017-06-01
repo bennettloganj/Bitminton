@@ -23,7 +23,7 @@ class BirdieCollectionViewCell: UICollectionViewCell {
     
 }
 
-class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     
     
@@ -58,7 +58,7 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
             
         print("Size of the fetched birdieImages Array \(birdieImages.count)" )
         
-        let cellSize = CGSize(width:100 , height:100)
+        let cellSize = CGSize(width:120 , height:120)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical //.horizontal
@@ -81,7 +81,6 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return birdieImages.count
         
-        
     }
     
     
@@ -90,6 +89,8 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Birdie")
+        let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
+        let colorClear = UIColor.clear
         
         //learn to fetch
         do{
@@ -106,19 +107,45 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "birdieCell", for: indexPath as IndexPath) as! BirdieCollectionViewCell
+        
         cell.birdieImage.image = birdieImage?.circleMasked
         
+        cell.birdieImage.layer.borderWidth=1.0
+        cell.birdieImage.layer.masksToBounds = false
+        cell.birdieImage.layer.borderColor = UIColor.white.cgColor
+        cell.birdieImage.layer.cornerRadius = cell.birdieImage.frame.size.height/2
+        cell.birdieImage.clipsToBounds = true
+        
+        
+        cell.birdieImage.layer.shadowColor = swiftcolor.cgColor
+        cell.birdieImage.layer.shadowOpacity = 1
+        cell.birdieImage.layer.shadowOffset = CGSize(width: -12, height: -12)
+        cell.birdieImage.layer.shadowRadius = 7
+        cell.birdieImage.layer.borderWidth = 3
+        cell.birdieImage.layer.borderColor = colorClear.cgColor
+        cell.birdieImage.layer.masksToBounds = true
+        cell.birdieImage.layer.shadowPath = UIBezierPath(roundedRect: cell.birdieImage.frame, cornerRadius: 50).cgPath
+        
+        
+        
         if indexPath.item == currentBirdieIndex{
-            let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
-
-            cell.birdieImage.backgroundColor = swiftcolor
+            cell.birdieImage.layer.masksToBounds = false
+            cell.birdieImage.layer.borderColor = swiftcolor.cgColor
         }else{
-            let swiftcolor = UIColor.clear
-            cell.birdieImage.backgroundColor = swiftcolor
+            cell.birdieImage.layer.borderColor = colorClear.cgColor
+            cell.birdieImage.layer.masksToBounds = true
+            
         }
         
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = CGSize(width: 100, height: 100)
+        return size
     }
     
     // MARK: - UICollectionViewDelegate protocol
@@ -130,6 +157,7 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         let cell = collectionView.cellForItem(at: indexPath) as! BirdieCollectionViewCell
         let selectedImage = cell.birdieImage.image
         let selectedImageData: NSData = UIImageJPEGRepresentation(selectedImage!, 1.0)! as NSData
+        let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
         
         lastBirdieIndex = currentBirdieIndex
         
@@ -146,8 +174,8 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
             currentBirdieIndex = indexPath.item
             
             if indexPath.item == currentBirdieIndex {
-                let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
-                cell.birdieImage.backgroundColor = swiftcolor
+                cell.birdieImage.layer.masksToBounds = false
+                cell.birdieImage.layer.borderColor = swiftcolor.cgColor
             }
         }
         

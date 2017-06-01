@@ -16,6 +16,7 @@ let lowerHalfName = "lowerHalf"
 let upperAreaName = "upperHalf"
 let BlockCategoryName = "block"
 let GameMessageName = "gameMessage"
+let PauseName = "Pause"
 
 let scoreKeyConstant = "HighScores"
 
@@ -33,6 +34,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     let PaddleCategory : UInt32 = 0x1 << 3
     let BorderCategory : UInt32 = 0x1 << 4
     let LowerHalfCategory : UInt32 = 0x1 << 5
+    let PauseCategory : UInt32 = 0x1 << 6
     
     private var strikeCount: Int = 0
     private var strikeChange: Bool = false
@@ -70,12 +72,14 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
    
         let lowerHalf = childNode(withName: "lowerHalf") as! SKSpriteNode
         
+        let pause = childNode(withName: PauseName) as! SKSpriteNode
+        
         let bottomRect = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 0.001)
         let bottom = SKNode()
         bottom.physicsBody = SKPhysicsBody(edgeLoopFrom: bottomRect)
         addChild(bottom)
         
-        
+        pause.physicsBody!.categoryBitMask = PauseCategory
         lowerHalf.physicsBody!.categoryBitMask = LowerHalfCategory
         bottom.physicsBody!.categoryBitMask = BottomCategory
         ball.physicsBody!.categoryBitMask = BallCategory
@@ -159,8 +163,6 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
-        
-        
     }
     
     
@@ -176,9 +178,30 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             let touchLocation = touch!.location(in: self)
             
             if let body = physicsWorld.body(at: touchLocation){
+                
+                
+                if body.node!.name == PauseName {
+                    self.isPaused = true
+                    
+                    let alertController = UIAlertController(title: "Game Paused", message: "", preferredStyle: .alert)
+                    
+                    let resumeAction = UIAlertAction(title: "Resume", style: .default, handler: { (_)->Void in
+                        self.isPaused = false
+                    })
+                    
+                    let menuAction = UIAlertAction(title: "Main Menu", style: .default, handler: { (_)->Void in
+                        self.viewController?.performSegue(withIdentifier: "fromGameToMenuSegue", sender: self.viewController)                    })
+                    
+                    alertController.addAction(resumeAction)
+                    alertController.addAction(menuAction)
+                    
+                    self.viewController?.present(alertController, animated: true, completion: nil)
+                }
+                
                 if body.node!.name == lowerHalfName {
                     isFingerOnPaddle = true
                 }
+                
             }
             
         default:
