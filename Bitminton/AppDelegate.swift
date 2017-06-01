@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         else{
+            let currentBirdieIndex = 1
+            defaults.set(currentBirdieIndex, forKey: "currentBirdieIndex")
+            
             let hasInitializedBirdieImages = true
             defaults.set(hasInitializedBirdieImages, forKey: "hasInitializedBirdieImages")
             

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,62 +22,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="badminton-facilities-18.07.04.loughborough.uk214-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Kc-x9-BRv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badminton-facilities-18.07.04.loughborough.uk214-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Kc-x9-BRv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-r7-Dtr">
+                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-r7-Dtr">
                                 <rect key="frame" x="0.0" y="-3" width="375" height="683"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BITMINTON" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-AF-yKO">
-                                <rect key="frame" x="45" y="102" width="284" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BITMINTON" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-AF-yKO">
+                                <rect key="frame" x="45" y="102" width="284" height="112"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" red="0.598255455493927" green="0.73999661207199097" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="47"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-3O-JnK">
-                                <rect key="frame" x="66" y="304" width="242" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="2player_button"/>
-                                <connections>
-                                    <action selector="touchTwoPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9H-JN-J0z"/>
-                                    <segue destination="ahq-u2-lht" kind="show" id="yms-Aq-yiS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-AZ-ZAL">
-                                <rect key="frame" x="66" y="364" width="242" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="birdie_button"/>
-                                <connections>
-                                    <action selector="touchBirdies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9P-YT-097"/>
-                                    <segue destination="OcJ-tM-qRl" kind="show" id="H6r-sa-H9N"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-4k-Ntz">
-                                <rect key="frame" x="66" y="424" width="242" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="HighScores_button"/>
-                                <connections>
-                                    <action selector="touchHighscore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30h-RG-FSz"/>
-                                    <segue destination="hBl-Iv-2Cz" kind="show" id="21W-sD-Pyd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjS-yn-c5C">
-                                <rect key="frame" x="66" y="244" width="242" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="1player_button">
-                                    <color key="titleColor" red="0.18255478143692017" green="0.24366188049316406" blue="0.38068324327468872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchOnePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ykx-vh-oaq"/>
-                                    <segue destination="3c4-TC-7PM" kind="show" id="s3c-Pf-lEA"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-6F-XTj">
+                                <rect key="frame" x="55" y="244" width="265" height="298"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjS-yn-c5C">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="62.5"/>
+                                        <state key="normal" title="Button" image="1player_button">
+                                            <color key="titleColor" red="0.18255478143692017" green="0.24366188049316406" blue="0.38068324327468872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchOnePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ykx-vh-oaq"/>
+                                            <segue destination="3c4-TC-7PM" kind="show" id="s3c-Pf-lEA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-3O-JnK">
+                                        <rect key="frame" x="0.0" y="78.5" width="265" height="62.5"/>
+                                        <state key="normal" title="Button" image="2player_button"/>
+                                        <connections>
+                                            <action selector="touchTwoPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9H-JN-J0z"/>
+                                            <segue destination="ahq-u2-lht" kind="show" id="yms-Aq-yiS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-AZ-ZAL">
+                                        <rect key="frame" x="0.0" y="157" width="265" height="62.5"/>
+                                        <state key="normal" title="Button" image="birdie_button"/>
+                                        <connections>
+                                            <action selector="touchBirdies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9P-YT-097"/>
+                                            <segue destination="OcJ-tM-qRl" kind="show" id="H6r-sa-H9N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-4k-Ntz">
+                                        <rect key="frame" x="0.0" y="235.5" width="265" height="62.5"/>
+                                        <state key="normal" title="Button" image="HighScores_button"/>
+                                        <connections>
+                                            <action selector="touchHighscore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30h-RG-FSz"/>
+                                            <segue destination="hBl-Iv-2Cz" kind="show" id="21W-sD-Pyd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ak2-6F-XTj" firstAttribute="top" secondItem="AWb-AF-yKO" secondAttribute="bottom" constant="30" id="41K-pw-CWs"/>
+                            <constraint firstAttribute="bottom" secondItem="ak2-6F-XTj" secondAttribute="bottom" constant="125" id="I0J-3S-NGy"/>
+                            <constraint firstItem="ak2-6F-XTj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="224" id="K3y-XY-QnR"/>
+                            <constraint firstItem="AWb-AF-yKO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="KyU-tZ-2b1"/>
+                            <constraint firstItem="9Kc-x9-BRv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pdd-wO-K8m"/>
+                            <constraint firstItem="9Kc-x9-BRv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QA8-Sk-M9Y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Kc-x9-BRv" secondAttribute="bottom" id="QFN-qa-ukL"/>
+                            <constraint firstItem="z5N-r7-Dtr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-3" id="R3e-ES-WQN"/>
+                            <constraint firstItem="AWb-AF-yKO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="Wt4-q6-WJf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AWb-AF-yKO" secondAttribute="trailing" constant="30" id="XEA-tF-8r9"/>
+                            <constraint firstAttribute="bottom" secondItem="z5N-r7-Dtr" secondAttribute="bottom" constant="-13" id="cHv-Yl-8cO"/>
+                            <constraint firstItem="ak2-6F-XTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="55" id="elO-wo-uHG"/>
+                            <constraint firstAttribute="trailing" secondItem="z5N-r7-Dtr" secondAttribute="trailing" id="j9k-rX-nka"/>
+                            <constraint firstAttribute="trailing" secondItem="9Kc-x9-BRv" secondAttribute="trailing" id="quM-nS-xag"/>
+                            <constraint firstItem="z5N-r7-Dtr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sOW-oe-Jaa"/>
+                            <constraint firstAttribute="trailing" secondItem="ak2-6F-XTj" secondAttribute="trailing" constant="55" id="tG9-Vz-IHc"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -183,6 +204,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a Birdie" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yaj-iZ-ja6">
                                 <rect key="frame" x="112" y="72" width="151" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -258,8 +282,8 @@
                                     <action selector="PhotoLibraryButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="qWG-hs-Adw"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-d9-wfB">
-                                <rect key="frame" x="0.0" y="72" width="375" height="427"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NewBirdie" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-d9-wfB">
+                                <rect key="frame" x="0.0" y="72" width="375" height="381"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxd-6x-26n">
@@ -546,10 +570,10 @@
         <image name="birdie_button" width="680" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Enu-Ja-roa"/>
         <segue reference="7uB-b7-XzQ"/>
         <segue reference="lDR-FY-quy"/>
         <segue reference="Q3g-IM-OZp"/>
-        <segue reference="xRr-oC-aTD"/>
+        <segue reference="s3c-Pf-lEA"/>
+        <segue reference="yms-Aq-yiS"/>
     </inferredMetricsTieBreakers>
 </document>

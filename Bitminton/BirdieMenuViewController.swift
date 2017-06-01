@@ -33,6 +33,9 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
     
     var birdieImages: [NSManagedObject] = []
     
+    var currentBirdieIndex: Int = 1
+    var lastBirdieIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,10 +70,11 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         
         birdieCollection.reloadData()
         
+        currentBirdieIndex = defaults.integer(forKey: "currentBirdieIndex")
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
     }
     
     // tell the collection view how many cells to make
@@ -102,7 +106,16 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "birdieCell", for: indexPath as IndexPath) as! BirdieCollectionViewCell
-        cell.birdieImage.image = birdieImage
+        cell.birdieImage.image = birdieImage?.circleMasked
+        
+        if indexPath.item == currentBirdieIndex{
+            let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
+
+            cell.birdieImage.backgroundColor = swiftcolor
+        }else{
+            let swiftcolor = UIColor.clear
+            cell.birdieImage.backgroundColor = swiftcolor
+        }
         
         
         return cell
@@ -117,17 +130,30 @@ class BirdieMenuViewController: UIViewController, UIImagePickerControllerDelegat
         let cell = collectionView.cellForItem(at: indexPath) as! BirdieCollectionViewCell
         let selectedImage = cell.birdieImage.image
         let selectedImageData: NSData = UIImageJPEGRepresentation(selectedImage!, 1.0)! as NSData
-    
         
-        if 0 == indexPath.item {
+        lastBirdieIndex = currentBirdieIndex
+        
+        if indexPath.item == 0 {
             //perform segue to screen for new image adding
             self.performSegue(withIdentifier: "SelectAPhoto", sender: self)
         }
         else {
             //let user use selected birdie in gameplay
+            
+            
             defaults.set(selectedImageData, forKey: "currentPlayBirdie")
+            defaults.set(indexPath.item, forKey: "currentBirdieIndex")
+            currentBirdieIndex = indexPath.item
+            
+            if indexPath.item == currentBirdieIndex {
+                let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
+                cell.birdieImage.backgroundColor = swiftcolor
+            }
         }
+        
+        birdieCollection.reloadData()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -28,7 +28,9 @@ UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             currentImage.contentMode = .scaleAspectFit
-            currentImage.image = pickedImage.circleMasked
+            let image = self.fixOrientation(img: pickedImage)
+            currentImage.image = image.circleMasked
+            
         }
         self.dismiss(animated: true, completion: nil);
     }
@@ -91,6 +93,22 @@ UINavigationControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func fixOrientation(img:UIImage) -> UIImage {
+        
+        if (img.imageOrientation == UIImageOrientation.up) {
+            return img;
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale);
+        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+        img.draw(in: rect)
+        
+        let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext();
+        return normalizedImage;
+        
     }
     
 
