@@ -53,7 +53,12 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         let birdieImageData = defaults.data(forKey: "currentPlayBirdie")
         let birdieImage = UIImage(data: birdieImageData!, scale: 1.0)
         
-        let balltexture = SKTexture(image: (birdieImage?.circleMasked!)!)
+        let circleBirdieImage = birdieImage?.circleMasked
+        
+        let swiftcolor = UIColor.white
+        let borderedCircleBirdImage = circleBirdieImage?.roundedImageWithBorder(width: 20, color: swiftcolor)
+        
+        let balltexture = SKTexture(image: borderedCircleBirdImage!)
         
         
         ball.texture = balltexture
@@ -132,19 +137,24 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
             let p1redStrikeTwo = childNode(withName: "p1redStrikeTwo") as! SKSpriteNode
             let p1redStrikeThree = childNode(withName: "p1redStrikeThree") as! SKSpriteNode
             
-            
+            let p1whiteStrikeOne = childNode(withName: "p1whiteStrikeOne") as! SKSpriteNode
+            let p1whiteStrikeTwo = childNode(withName: "p1whiteStrikeTwo") as! SKSpriteNode
+            let p1whiteStrikeThree = childNode(withName: "p1whiteStrikeThree") as! SKSpriteNode
             
             p1strikeCount += 1
             
             switch p1strikeCount {
             case 2:
                 p1redStrikeOne.zPosition = 5
+                p1whiteStrikeOne.zPosition = -1
                 strikeChange = true
             case 4:
                 p1redStrikeTwo.zPosition = 5
+                p1whiteStrikeTwo.zPosition = -1
                 strikeChange = true
             case 6:
                 p1redStrikeThree.zPosition = 5
+                p1whiteStrikeThree.zPosition = -1
                 strikeChange = true
                 gameState.enter(TwoPlayerGameOver.self)
             default:
@@ -162,19 +172,24 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
             let p2redStrikeTwo = childNode(withName: "p2redStrikeTwo") as! SKSpriteNode
             let p2redStrikeThree = childNode(withName: "p2redStrikeThree") as! SKSpriteNode
             
-            
+            let p2whiteStrikeOne = childNode(withName: "p2whiteStrikeOne") as! SKSpriteNode
+            let p2whiteStrikeTwo = childNode(withName: "p2whiteStrikeTwo") as! SKSpriteNode
+            let p2whiteStrikeThree = childNode(withName: "p2whiteStrikeThree") as! SKSpriteNode
             
             p2strikeCount += 1
             
             switch p2strikeCount {
             case 2:
                 p2redStrikeOne.zPosition = 5
+                p2whiteStrikeOne.zPosition = -1
                 strikeChange = true
             case 4:
                 p2redStrikeTwo.zPosition = 5
+                p2whiteStrikeTwo.zPosition = -1
                 strikeChange = true
             case 6:
                 p2redStrikeThree.zPosition = 5
+                p2whiteStrikeThree.zPosition = -1
                 strikeChange = true
                 gameState.enter(TwoPlayerGameOver.self)
             default:

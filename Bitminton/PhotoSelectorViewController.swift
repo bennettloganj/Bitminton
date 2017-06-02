@@ -36,7 +36,7 @@ UINavigationControllerDelegate {
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
-        let imageData = UIImageJPEGRepresentation(currentImage.image!.circleMasked!, 1.0)! as NSData
+        let imageData = UIImagePNGRepresentation(currentImage.image!.circleMasked!)! as NSData
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         

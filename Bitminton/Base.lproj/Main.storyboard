@@ -9,6 +9,14 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="STHeiti Medium 11-11-28-535.ttc">
+            <string>STHeitiTC-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -36,15 +44,15 @@
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
                                 <color key="textColor" red="0.598255455493927" green="0.73999661207199097" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="46"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="52"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-6F-XTj">
-                                <rect key="frame" x="55" y="244" width="265" height="298"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-6F-XTj">
+                                <rect key="frame" x="35" y="244" width="305" height="298"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjS-yn-c5C">
-                                        <rect key="frame" x="0.0" y="0.0" width="265" height="62.5"/>
-                                        <state key="normal" title="Button" image="1player_button">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="61"/>
+                                        <state key="normal" title="Button" image="1PlayerButtonNew">
                                             <color key="titleColor" red="0.18255478143692017" green="0.24366188049316406" blue="0.38068324327468872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -53,24 +61,24 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-3O-JnK">
-                                        <rect key="frame" x="0.0" y="78.5" width="265" height="62.5"/>
-                                        <state key="normal" title="Button" image="2player_button"/>
+                                        <rect key="frame" x="0.0" y="79" width="305" height="61"/>
+                                        <state key="normal" title="Button" image="2PlayerButtonNew"/>
                                         <connections>
                                             <action selector="touchTwoPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9H-JN-J0z"/>
                                             <segue destination="ahq-u2-lht" kind="show" id="yms-Aq-yiS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-AZ-ZAL">
-                                        <rect key="frame" x="0.0" y="157" width="265" height="62.5"/>
-                                        <state key="normal" title="Button" image="birdie_button"/>
+                                        <rect key="frame" x="0.0" y="158" width="305" height="61"/>
+                                        <state key="normal" title="Button" image="BirdieButtonNew"/>
                                         <connections>
                                             <action selector="touchBirdies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9P-YT-097"/>
                                             <segue destination="OcJ-tM-qRl" kind="show" id="H6r-sa-H9N"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-4k-Ntz">
-                                        <rect key="frame" x="0.0" y="235.5" width="265" height="62.5"/>
-                                        <state key="normal" title="Button" image="HighScores_button"/>
+                                        <rect key="frame" x="0.0" y="237" width="305" height="61"/>
+                                        <state key="normal" title="Button" image="HighScoresButtonNew"/>
                                         <connections>
                                             <action selector="touchHighscore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30h-RG-FSz"/>
                                             <segue destination="hBl-Iv-2Cz" kind="show" id="21W-sD-Pyd"/>
@@ -92,11 +100,11 @@
                             <constraint firstItem="AWb-AF-yKO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="Wt4-q6-WJf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AWb-AF-yKO" secondAttribute="trailing" constant="30" id="XEA-tF-8r9"/>
                             <constraint firstAttribute="bottom" secondItem="z5N-r7-Dtr" secondAttribute="bottom" constant="-13" id="cHv-Yl-8cO"/>
-                            <constraint firstItem="ak2-6F-XTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="55" id="elO-wo-uHG"/>
+                            <constraint firstItem="ak2-6F-XTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="elO-wo-uHG"/>
                             <constraint firstAttribute="trailing" secondItem="z5N-r7-Dtr" secondAttribute="trailing" id="j9k-rX-nka"/>
                             <constraint firstAttribute="trailing" secondItem="9Kc-x9-BRv" secondAttribute="trailing" id="quM-nS-xag"/>
                             <constraint firstItem="z5N-r7-Dtr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sOW-oe-Jaa"/>
-                            <constraint firstAttribute="trailing" secondItem="ak2-6F-XTj" secondAttribute="trailing" constant="55" id="tG9-Vz-IHc"/>
+                            <constraint firstAttribute="trailing" secondItem="ak2-6F-XTj" secondAttribute="trailing" constant="35" id="tG9-Vz-IHc"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -137,47 +145,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BadmintionPattern" translatesAutoresizingMaskIntoConstraints="NO" id="pbQ-S1-AT9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="badminton-facilities-18.07.04.loughborough.uk214-1" translatesAutoresizingMaskIntoConstraints="NO" id="xtD-qe-MgG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-2E-81P">
+                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zr0-E6-xyR">
+                                <rect key="frame" x="0.0" y="-8" width="375" height="683"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-2E-81P">
                                 <rect key="frame" x="62" y="496" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="MainMenuButton"/>
+                                <state key="normal" title="Button" image="MainMenu"/>
                                 <connections>
                                     <action selector="menuButton:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="x6r-fr-Bcn"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="x4b-5m-cwN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46Z-E0-jln">
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46Z-E0-jln">
                                 <rect key="frame" x="62" y="438" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="PlayAgainButton"/>
+                                <state key="normal" title="Button" image="PlayAgain"/>
                                 <connections>
                                     <action selector="ReplayButton:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="WBX-4d-kPe"/>
                                     <segue destination="ahq-u2-lht" kind="show" id="Enu-Ja-roa"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-ew-dx6">
-                                <rect key="frame" x="62" y="140" width="250" height="143"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-ew-dx6">
+                                <rect key="frame" x="62" y="143" width="250" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Game Over!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcT-ME-4ES">
-                                <rect key="frame" x="62" y="154" width="250" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="72"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmf-VA-pew" userLabel="WinnerLabel">
-                                <rect key="frame" x="62" y="205" width="250" height="78"/>
+                                <rect key="frame" x="62" y="206" width="250" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="32"/>
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Game Over!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcT-ME-4ES">
+                                <rect key="frame" x="62" y="143" width="250" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="72"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -187,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-tN-cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1666" y="-66"/>
+            <point key="canvasLocation" x="1664.8" y="-66.11694152923539"/>
         </scene>
         <!--Birdies-->
         <scene sceneID="mrN-2b-DHw">
@@ -209,7 +223,7 @@
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xec-2Y-VxK">
@@ -355,7 +369,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NZd-OV-zji" id="KY7-Vg-Wkz">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrd-0F-sdF">
@@ -396,7 +410,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Highscores" id="lTI-VJ-iG4">
-                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="kyC-uA-COT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="kyC-uA-COT">
                             <color key="tintColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="fSV-RU-Wwn"/>
@@ -446,51 +460,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BadmintionPattern" translatesAutoresizingMaskIntoConstraints="NO" id="HDY-Wf-Kpe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="badminton-facilities-18.07.04.loughborough.uk214-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vlh-sd-Def">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El0-e6-1ms">
+                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.55000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7z-kH-ZmV">
+                                <rect key="frame" x="0.0" y="-8" width="375" height="683"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oZ-Kc-gHA">
+                                <rect key="frame" x="62" y="166" width="250" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99989157920000005" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El0-e6-1ms">
                                 <rect key="frame" x="62" y="449" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="PlayAgainButton"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Button" image="PlayAgain"/>
                                 <connections>
                                     <action selector="ReplayButton:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="V9Z-pO-Y4O"/>
                                     <segue destination="3c4-TC-7PM" kind="presentation" id="xRr-oC-aTD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="de4-z5-i79">
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="de4-z5-i79">
                                 <rect key="frame" x="62" y="507" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="MainMenuButton"/>
+                                <state key="normal" title="Button" image="MainMenu"/>
                                 <connections>
                                     <action selector="mainMenu:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="VfU-QL-D6C"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="b6L-pP-50S"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oZ-Kc-gHA">
-                                <rect key="frame" x="77" y="171" width="220" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99989157920000005" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Game Over!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57i-zD-V3j">
                                 <rect key="frame" x="77" y="185" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="72"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="72"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your score:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CBB-zQ-er7">
                                 <rect key="frame" x="112" y="235" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-9T-dD4">
                                 <rect key="frame" x="122" y="273" width="131" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="52"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="52"/>
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -503,14 +524,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOt-Nl-ZHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="-968"/>
+            <point key="canvasLocation" x="1112.8" y="-968.36581709145435"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gOf-0B-bVE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hBl-Iv-2Cz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rkU-8O-EPz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rkU-8O-EPz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -528,7 +549,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OcJ-tM-qRl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XBA-gW-3dd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XBA-gW-3dd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -546,7 +567,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1tP-oN-tJh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c25-6a-AX8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c25-6a-AX8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -559,40 +580,22 @@
             </objects>
             <point key="canvasLocation" x="3060" y="939.58020989505258"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hB3-Qp-eQz">
-            <objects>
-                <viewController id="Aiu-N9-eTh" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1Fh-PO-1xQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="9rX-0c-gy4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0fh-MR-wgm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="51t-kZ-gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
-        <image name="1player_button" width="680" height="125"/>
-        <image name="2player_button" width="680" height="125"/>
-        <image name="BadmintionPattern" width="750" height="1334"/>
-        <image name="HighScores_button" width="680" height="125"/>
-        <image name="MainMenuButton" width="718" height="122"/>
+        <image name="1PlayerButtonNew" width="680" height="125"/>
+        <image name="2PlayerButtonNew" width="680" height="125"/>
+        <image name="BirdieButtonNew" width="680" height="125"/>
+        <image name="HighScoresButtonNew" width="680" height="125"/>
+        <image name="MainMenu" width="680" height="125"/>
         <image name="NewBirdie" width="233" height="233"/>
-        <image name="PlayAgainButton" width="718" height="122"/>
+        <image name="PlayAgain" width="1360" height="250"/>
         <image name="badminton-facilities-18.07.04.loughborough.uk214-1" width="750" height="1334"/>
-        <image name="birdie_button" width="680" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s3c-Pf-lEA"/>
-        <segue reference="B7k-Uo-J8L"/>
-        <segue reference="yms-Aq-yiS"/>
+        <segue reference="b6L-pP-50S"/>
+        <segue reference="xRr-oC-aTD"/>
+        <segue reference="7GR-fn-0Bh"/>
         <segue reference="Q3g-IM-OZp"/>
-        <segue reference="jUy-gc-Fx2"/>
+        <segue reference="Enu-Ja-roa"/>
     </inferredMetricsTieBreakers>
 </document>

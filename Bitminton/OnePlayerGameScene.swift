@@ -61,9 +61,13 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         let ball = childNode(withName: BallCategoryName) as! SKSpriteNode
         let birdieImageData = defaults.data(forKey: "currentPlayBirdie")
         let birdieImage = UIImage(data: birdieImageData!, scale: 1.0)
+        let circleBirdieImage = birdieImage?.circleMasked
         
-        let balltexture = SKTexture(image: (birdieImage?.circleMasked!)!)
+        let swiftcolor = UIColor.white
+        let borderedCircleBirdImage = circleBirdieImage?.roundedImageWithBorder(width: 20, color: swiftcolor)
         
+        
+        let balltexture = SKTexture(image: borderedCircleBirdImage!)
         
         ball.texture = balltexture
         
@@ -135,19 +139,24 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
             let redStrikeTwo = childNode(withName: "redStrikeTwo") as! SKSpriteNode
             let redStrikeThree = childNode(withName: "redStrikeThree") as! SKSpriteNode
             
-            
+            let whiteStrikeOne = childNode(withName: "whiteStrikeOne") as! SKSpriteNode
+            let whiteStrikeTwo = childNode(withName: "whiteStrikeTwo") as! SKSpriteNode
+            let whiteStrikeThree = childNode(withName: "whiteStrikeThree") as! SKSpriteNode
             
             strikeCount += 1
             
             switch strikeCount {
             case 2:
                 redStrikeOne.zPosition = 5
+                whiteStrikeOne.zPosition = 0
                 strikeChange = true
             case 4:
                 redStrikeTwo.zPosition = 5
+                whiteStrikeTwo.zPosition = 0
                 strikeChange = true
             case 6:
                 redStrikeThree.zPosition = 5
+                whiteStrikeThree.zPosition = 0
                 strikeChange = true
                 gameState.enter(GameOver.self)
             default:
@@ -318,6 +327,24 @@ extension UIImage {
         UIImage(cgImage: cgImage).draw(in: breadthRect)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+    
+    func roundedImageWithBorder(width: CGFloat, color: UIColor) -> UIImage? {
+        let square = CGSize(width: min(size.width, size.height) + width * 2, height: min(size.width, size.height) + width * 2)
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
+        imageView.contentMode = .center
+        imageView.image = self
+        imageView.layer.cornerRadius = square.width/2
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = width
+        imageView.layer.borderColor = color.cgColor
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
+    
     
     func fixOrientation() -> UIImage {
         

@@ -10,6 +10,21 @@
 		B90227E41ED6176F004C9AC0 /* BirdieMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90227E31ED6176F004C9AC0 /* BirdieMenuViewController.swift */; };
 		B90228271ED753F2004C9AC0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90228261ED753F2004C9AC0 /* CoreData.framework */; };
 		B902282A1ED75437004C9AC0 /* Bitminton.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B90228281ED75437004C9AC0 /* Bitminton.xcdatamodeld */; };
+		B92D21E51EE1C67000C8D6B7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21D61EE1C67000C8D6B7 /* OpenSans-Bold.ttf */; };
+		B92D21E61EE1C67000C8D6B7 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21D71EE1C67000C8D6B7 /* OpenSans-BoldItalic.ttf */; };
+		B92D21E71EE1C67000C8D6B7 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21D81EE1C67000C8D6B7 /* OpenSans-ExtraBold.ttf */; };
+		B92D21E81EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21D91EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf */; };
+		B92D21E91EE1C67000C8D6B7 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DA1EE1C67000C8D6B7 /* OpenSans-Italic.ttf */; };
+		B92D21EA1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DB1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf */; };
+		B92D21EB1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DC1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc */; };
+		B92D21EC1EE1C67000C8D6B7 /* STHeiti Light.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DD1EE1C67000C8D6B7 /* STHeiti Light.ttc */; };
+		B92D21ED1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DE1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc */; };
+		B92D21EE1EE1C67000C8D6B7 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DF1EE1C67000C8D6B7 /* OpenSans-Light.ttf */; };
+		B92D21EF1EE1C67000C8D6B7 /* STHeiti Medium.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E01EE1C67000C8D6B7 /* STHeiti Medium.ttc */; };
+		B92D21F01EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E11EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf */; };
+		B92D21F11EE1C67000C8D6B7 /* Stoudmire_Resume.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E21EE1C67000C8D6B7 /* Stoudmire_Resume.pdf */; };
+		B92D21F21EE1C67000C8D6B7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E31EE1C67000C8D6B7 /* OpenSans-Regular.ttf */; };
+		B92D21F31EE1C67000C8D6B7 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E41EE1C67000C8D6B7 /* OpenSans-Semibold.ttf */; };
 		B92D5C721ED484BA0052D7ED /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */; };
 		B9341C471ECB281600CCFD99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C461ECB281600CCFD99 /* AppDelegate.swift */; };
 		B9341C491ECB281600CCFD99 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9341C481ECB281600CCFD99 /* MenuViewController.swift */; };
@@ -56,6 +71,21 @@
 		B90227E31ED6176F004C9AC0 /* BirdieMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdieMenuViewController.swift; sourceTree = "<group>"; };
 		B90228261ED753F2004C9AC0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B90228291ED75437004C9AC0 /* Bitminton.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bitminton.xcdatamodel; sourceTree = "<group>"; };
+		B92D21D61EE1C67000C8D6B7 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		B92D21D71EE1C67000C8D6B7 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "../../../OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B92D21D81EE1C67000C8D6B7 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBold.ttf"; path = "../../../OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		B92D21D91EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../../../OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		B92D21DA1EE1C67000C8D6B7 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "../../../OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		B92D21DB1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "../../../OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		B92D21DC1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Light 11-11-28-502.ttc"; path = "../../../STHeiti Light 11-11-28-502.ttc"; sourceTree = "<group>"; };
+		B92D21DD1EE1C67000C8D6B7 /* STHeiti Light.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Light.ttc"; path = "../../../STHeiti Light.ttc"; sourceTree = "<group>"; };
+		B92D21DE1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Medium 11-11-28-535.ttc"; path = "../../../STHeiti Medium 11-11-28-535.ttc"; sourceTree = "<group>"; };
+		B92D21DF1EE1C67000C8D6B7 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "../../../OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		B92D21E01EE1C67000C8D6B7 /* STHeiti Medium.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Medium.ttc"; path = "../../../STHeiti Medium.ttc"; sourceTree = "<group>"; };
+		B92D21E11EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "../../../OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		B92D21E21EE1C67000C8D6B7 /* Stoudmire_Resume.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Stoudmire_Resume.pdf; path = ../../../Stoudmire_Resume.pdf; sourceTree = "<group>"; };
+		B92D21E31EE1C67000C8D6B7 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		B92D21E41EE1C67000C8D6B7 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Semibold.ttf"; path = "../../../OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		B92D5C711ED484BA0052D7ED /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		B9341C431ECB281600CCFD99 /* Bitminton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitminton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9341C461ECB281600CCFD99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +151,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B92D21F41EE1C6F900C8D6B7 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B92D21D61EE1C67000C8D6B7 /* OpenSans-Bold.ttf */,
+				B92D21D71EE1C67000C8D6B7 /* OpenSans-BoldItalic.ttf */,
+				B92D21D81EE1C67000C8D6B7 /* OpenSans-ExtraBold.ttf */,
+				B92D21D91EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf */,
+				B92D21DA1EE1C67000C8D6B7 /* OpenSans-Italic.ttf */,
+				B92D21DB1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf */,
+				B92D21DC1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc */,
+				B92D21DD1EE1C67000C8D6B7 /* STHeiti Light.ttc */,
+				B92D21DE1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc */,
+				B92D21DF1EE1C67000C8D6B7 /* OpenSans-Light.ttf */,
+				B92D21E01EE1C67000C8D6B7 /* STHeiti Medium.ttc */,
+				B92D21E11EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf */,
+				B92D21E21EE1C67000C8D6B7 /* Stoudmire_Resume.pdf */,
+				B92D21E31EE1C67000C8D6B7 /* OpenSans-Regular.ttf */,
+				B92D21E41EE1C67000C8D6B7 /* OpenSans-Semibold.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		B9341C3A1ECB281600CCFD99 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +211,7 @@
 				B9CE4F451ED3306A00186DEF /* TwoPlayerViewController.swift */,
 				B9CE4F471ED3313900186DEF /* TwoPlayerGameScene.sks */,
 				B9CE4F491ED336FD00186DEF /* TwoPlayerGameScene.swift */,
+				B92D21F41EE1C6F900C8D6B7 /* fonts */,
 				B9CE4F521ED33FE100186DEF /* TwoPlayerGameStates */,
 				B9CE4F4B1ED33F1300186DEF /* SinglePlayerGameStates */,
 				B9341C461ECB281600CCFD99 /* AppDelegate.swift */,
@@ -316,10 +369,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CE4F481ED3313900186DEF /* TwoPlayerGameScene.sks in Resources */,
+				B92D21EB1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc in Resources */,
+				B92D21E81EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				B92D21EE1EE1C67000C8D6B7 /* OpenSans-Light.ttf in Resources */,
+				B92D21F31EE1C67000C8D6B7 /* OpenSans-Semibold.ttf in Resources */,
+				B92D21ED1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc in Resources */,
 				B9341C791ECB659100CCFD99 /* OnePlayerGameScene.sks in Resources */,
+				B92D21EF1EE1C67000C8D6B7 /* STHeiti Medium.ttc in Resources */,
+				B92D21E91EE1C67000C8D6B7 /* OpenSans-Italic.ttf in Resources */,
+				B92D21F01EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf in Resources */,
+				B92D21E51EE1C67000C8D6B7 /* OpenSans-Bold.ttf in Resources */,
+				B92D21F21EE1C67000C8D6B7 /* OpenSans-Regular.ttf in Resources */,
+				B92D21EC1EE1C67000C8D6B7 /* STHeiti Light.ttc in Resources */,
+				B92D21E71EE1C67000C8D6B7 /* OpenSans-ExtraBold.ttf in Resources */,
+				B92D21E61EE1C67000C8D6B7 /* OpenSans-BoldItalic.ttf in Resources */,
 				B9341C511ECB281600CCFD99 /* LaunchScreen.storyboard in Resources */,
+				B92D21F11EE1C67000C8D6B7 /* Stoudmire_Resume.pdf in Resources */,
 				B9341C4E1ECB281600CCFD99 /* Assets.xcassets in Resources */,
 				B9341C4C1ECB281600CCFD99 /* Main.storyboard in Resources */,
+				B92D21EA1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,9 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.set(hasInitializedBirdieImages, forKey: "hasInitializedBirdieImages")
             
             let newImage = UIImage(named: "NewBirdie")
-            let defaultImage = UIImage(named: "PlainBirdieYellow")
-            let defaultImageData: NSData = UIImageJPEGRepresentation(defaultImage!, 1.0)! as NSData
-            let newImageData: NSData = UIImageJPEGRepresentation(newImage!, 1.0)! as NSData
+            let defaultImage = UIImage(named: "PlainBirdiex3")
+            let defaultImageData: NSData = UIImagePNGRepresentation(defaultImage!)! as NSData
+            let newImageData: NSData = UIImagePNGRepresentation(newImage!)! as NSData
             
             let entity =  NSEntityDescription.insertNewObject(forEntityName: "Birdie", into: context) as! Birdie
             entity.birdieImage = newImageData

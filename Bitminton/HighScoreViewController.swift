@@ -39,7 +39,6 @@ class HighScoreViewController: UIViewController, UITableViewDataSource, UITableV
         scoreTable.dataSource = self
         let swiftcolor = UIColor(red: 165/255, green: 222/255, blue: 255/255, alpha: 1.0)
         navigationController?.navigationBar.barTintColor = swiftcolor
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,6 +57,7 @@ class HighScoreViewController: UIViewController, UITableViewDataSource, UITableV
         
         let row = indexPath.row
         var ranks: [String] = ["1.", "2.", "3.", "4.", "5.", "6.", "7.", "8.", "9.", "10.", "11.", "12.", "13."]
+        
         cell.playerScoreLabel?.text = String(scoreArray[row])
         cell.rankNumber?.text = ranks[row]
         cell.playerNameLabel?.text = nameArray[row]
