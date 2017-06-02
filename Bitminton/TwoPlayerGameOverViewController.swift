@@ -12,6 +12,8 @@ class TwoPlayerGameOverViewController: UIViewController {
     
     var player1Won: Bool = false
     
+    @IBOutlet weak var grayImageView: UIImageView!
+    
     @IBOutlet weak var WinnerLabel: UILabel!
     
     @IBAction func menuButton(_ sender: UIButton) {
@@ -23,6 +25,8 @@ class TwoPlayerGameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        grayImageView.layer.cornerRadius = 4.0
+        
         if player1Won{
             WinnerLabel.text = "Player 1 Wins"
         }

@@ -20,6 +20,7 @@ class GameOverViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
+    @IBOutlet weak var grayImageView: UIImageView!
     
     @IBAction func ReplayButton(_ sender: UIButton) {
         
@@ -36,7 +37,7 @@ class GameOverViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        grayImageView.layer.cornerRadius = 4.0
         ScoreLabel.text = stringPassed
     }
     override func viewDidAppear(_ animated: Bool) {

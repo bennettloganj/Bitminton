@@ -64,7 +64,7 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
         let circleBirdieImage = birdieImage?.circleMasked
         
         let swiftcolor = UIColor.white
-        let borderedCircleBirdImage = circleBirdieImage?.roundedImageWithBorder(width: 20, color: swiftcolor)
+        let borderedCircleBirdImage = circleBirdieImage?.roundedImageWithBorder(width: 50, color: swiftcolor)
         
         
         let balltexture = SKTexture(image: borderedCircleBirdImage!)

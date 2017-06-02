@@ -47,11 +47,11 @@
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="52"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-6F-XTj">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-6F-XTj">
                                 <rect key="frame" x="35" y="244" width="305" height="298"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjS-yn-c5C">
-                                        <rect key="frame" x="0.0" y="0.0" width="305" height="61"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="59"/>
                                         <state key="normal" title="Button" image="1PlayerButtonNew">
                                             <color key="titleColor" red="0.18255478143692017" green="0.24366188049316406" blue="0.38068324327468872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -61,7 +61,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-3O-JnK">
-                                        <rect key="frame" x="0.0" y="79" width="305" height="61"/>
+                                        <rect key="frame" x="0.0" y="80" width="305" height="58.5"/>
                                         <state key="normal" title="Button" image="2PlayerButtonNew"/>
                                         <connections>
                                             <action selector="touchTwoPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9H-JN-J0z"/>
@@ -69,7 +69,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-AZ-ZAL">
-                                        <rect key="frame" x="0.0" y="158" width="305" height="61"/>
+                                        <rect key="frame" x="0.0" y="159.5" width="305" height="59"/>
                                         <state key="normal" title="Button" image="BirdieButtonNew"/>
                                         <connections>
                                             <action selector="touchBirdies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9P-YT-097"/>
@@ -77,7 +77,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-4k-Ntz">
-                                        <rect key="frame" x="0.0" y="237" width="305" height="61"/>
+                                        <rect key="frame" x="0.0" y="239.5" width="305" height="58.5"/>
                                         <state key="normal" title="Button" image="HighScoresButtonNew"/>
                                         <connections>
                                             <action selector="touchHighscore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30h-RG-FSz"/>
@@ -127,6 +127,7 @@
                     </view>
                     <connections>
                         <segue destination="ndM-SJ-Feu" kind="show" identifier="TwoPlayerSegueToGameOver" id="gco-Rs-KV1"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="fromTwoToMenuSegue" id="46O-Ka-4Hd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rcj-Vg-LoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,6 +198,7 @@
                     </view>
                     <connections>
                         <outlet property="WinnerLabel" destination="rmf-VA-pew" id="l1f-a8-zaH"/>
+                        <outlet property="grayImageView" destination="5Mi-ew-dx6" id="GUM-az-ANy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3q-tN-cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,6 +263,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Birdies" id="WNr-lO-ziK">
                         <barButtonItem key="leftBarButtonItem" systemItem="save" id="QGk-Rc-swc">
+                            <color key="tintColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="7uB-b7-XzQ"/>
                             </connections>
@@ -292,7 +295,9 @@
                                 <rect key="frame" x="87" y="575" width="200" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Open Photo Library"/>
+                                <state key="normal" title="Open Photo Library">
+                                    <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="PhotoLibraryButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="qWG-hs-Adw"/>
                                 </connections>
@@ -305,7 +310,9 @@
                                 <rect key="frame" x="87" y="507" width="200" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Open Camera"/>
+                                <state key="normal" title="Open Camera">
+                                    <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="CameraButton:" destination="sB6-RK-t4F" eventType="touchUpInside" id="vhS-Uc-Tvg"/>
                                 </connections>
@@ -315,11 +322,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Select a Photo" id="bVd-ex-yBb">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="sw1-Z3-ggM">
+                            <color key="tintColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelButton:" destination="sB6-RK-t4F" id="VK8-Lk-QBC"/>
+                                <segue destination="beO-G7-Sd4" kind="show" id="x9K-tz-vFb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="QDm-YM-XGM">
+                            <color key="tintColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButton:" destination="sB6-RK-t4F" id="xFD-ed-z2X"/>
                             </connections>
@@ -520,6 +530,7 @@
                     </view>
                     <connections>
                         <outlet property="ScoreLabel" destination="e8p-9T-dD4" id="Utj-qM-7jc"/>
+                        <outlet property="grayImageView" destination="8oZ-Kc-gHA" id="PE6-vC-QAE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOt-Nl-ZHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,10 +603,10 @@
         <image name="badminton-facilities-18.07.04.loughborough.uk214-1" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b6L-pP-50S"/>
-        <segue reference="xRr-oC-aTD"/>
-        <segue reference="7GR-fn-0Bh"/>
-        <segue reference="Q3g-IM-OZp"/>
+        <segue reference="46O-Ka-4Hd"/>
         <segue reference="Enu-Ja-roa"/>
+        <segue reference="x9K-tz-vFb"/>
+        <segue reference="Q3g-IM-OZp"/>
+        <segue reference="xRr-oC-aTD"/>
     </inferredMetricsTieBreakers>
 </document>

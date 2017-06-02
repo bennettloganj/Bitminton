@@ -32,6 +32,7 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
     let Paddle2Category : UInt32 = 0x1 << 5
     let UpperHalfCategory : UInt32 = 0x1 << 6
     let LowerHalfCategory : UInt32 = 0x1 << 7
+    let PauseCategory : UInt32 = 0x1 << 8
     
     lazy var gameState: GKStateMachine = GKStateMachine(states: [
         TwoPlayerWaitingForTap(scene: self),
@@ -56,7 +57,7 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         let circleBirdieImage = birdieImage?.circleMasked
         
         let swiftcolor = UIColor.white
-        let borderedCircleBirdImage = circleBirdieImage?.roundedImageWithBorder(width: 20, color: swiftcolor)
+        let borderedCircleBirdImage = circleBirdieImage?.roundedImageWithBorder(width: 50, color: swiftcolor)
         
         let balltexture = SKTexture(image: borderedCircleBirdImage!)
         
@@ -66,6 +67,8 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         
         let paddle1 = childNode(withName: Paddle1CategoryName) as! SKSpriteNode
         let paddle2 = childNode(withName: Paddle2CategoryName) as! SKSpriteNode
+        
+        let pause = childNode(withName: PauseName) as! SKSpriteNode
         
         let lowerHalf = childNode(withName: "lowerHalf") as! SKSpriteNode
         let upperHalf = childNode(withName: "upperHalf") as! SKSpriteNode
@@ -80,6 +83,8 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
         top.physicsBody = SKPhysicsBody(edgeLoopFrom: topRect)
         addChild(top)
         
+        
+        pause.physicsBody!.categoryBitMask = PauseCategory
         bottom.physicsBody!.categoryBitMask = BottomCategory
         top.physicsBody!.categoryBitMask = TopCategory
         ball.physicsBody!.categoryBitMask = BallCategory
@@ -224,6 +229,25 @@ class TwoPlayerGameScene: SKScene, SKPhysicsContactDelegate {
                         let paddle = childNode(withName: Paddle2CategoryName) as! SKSpriteNode
                         selectedNodes[touch] = paddle
                     }
+                    
+                    if node.name == PauseName {
+                        self.isPaused = true
+                        
+                        let alertController = UIAlertController(title: "Game Paused", message: "", preferredStyle: .alert)
+                        
+                        let resumeAction = UIAlertAction(title: "Resume", style: .default, handler: { (_)->Void in
+                            self.isPaused = false
+                        })
+                        
+                        let menuAction = UIAlertAction(title: "Main Menu", style: .default, handler: { (_)->Void in
+                            self.viewController?.performSegue(withIdentifier: "fromTwoToMenuSegue", sender: self.viewController)                    })
+                        
+                        alertController.addAction(resumeAction)
+                        alertController.addAction(menuAction)
+                        
+                        self.viewController?.present(alertController, animated: true, completion: nil)
+                    }
+
                 }
             }
         default:
