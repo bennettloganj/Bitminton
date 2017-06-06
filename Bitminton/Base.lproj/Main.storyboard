@@ -603,10 +603,10 @@
         <image name="badminton-facilities-18.07.04.loughborough.uk214-1" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="s3c-Pf-lEA"/>
         <segue reference="46O-Ka-4Hd"/>
-        <segue reference="Enu-Ja-roa"/>
+        <segue reference="yms-Aq-yiS"/>
         <segue reference="x9K-tz-vFb"/>
         <segue reference="Q3g-IM-OZp"/>
-        <segue reference="xRr-oC-aTD"/>
     </inferredMetricsTieBreakers>
 </document>
