@@ -23,11 +23,9 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var grayImageView: UIImageView!
     
     @IBAction func ReplayButton(_ sender: UIButton) {
-        
     }
-   
+    
     @IBAction func mainMenu(_ sender: UIButton) {
-        
     }
     
     @IBOutlet weak var ScoreLabel: UILabel!

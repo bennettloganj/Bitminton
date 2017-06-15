@@ -16,9 +16,10 @@ class TwoPlayerGameOverViewController: UIViewController {
     
     @IBOutlet weak var WinnerLabel: UILabel!
     
-    @IBAction func menuButton(_ sender: UIButton) {
-    }
     @IBAction func ReplayButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func mainMenu(_ sender: UIButton) {
     }
     
     

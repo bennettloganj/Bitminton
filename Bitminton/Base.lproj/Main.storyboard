@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
+        </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
         </array>
         <array key="STHeiti Medium 11-11-28-535.ttc">
             <string>STHeitiTC-Medium</string>
@@ -39,7 +42,7 @@
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="BITMINTON" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-AF-yKO">
-                                <rect key="frame" x="45" y="102" width="284" height="112"/>
+                                <rect key="frame" x="45" y="102" width="284" height="71"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -47,64 +50,79 @@
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="52"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-6F-XTj">
-                                <rect key="frame" x="35" y="244" width="305" height="298"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="LLE-Cs-xRk">
+                                <rect key="frame" x="37" y="286" width="300" height="241"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjS-yn-c5C">
-                                        <rect key="frame" x="0.0" y="0.0" width="305" height="59"/>
-                                        <state key="normal" title="Button" image="1PlayerButtonNew">
-                                            <color key="titleColor" red="0.18255478143692017" green="0.24366188049316406" blue="0.38068324327468872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-QF-Kpb">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="49"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="27"/>
+                                        <state key="normal" title="1 PLAYER">
+                                            <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="touchOnePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ykx-vh-oaq"/>
-                                            <segue destination="3c4-TC-7PM" kind="show" id="s3c-Pf-lEA"/>
+                                            <action selector="touchOnePlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncS-BI-N2h"/>
+                                            <segue destination="3c4-TC-7PM" kind="show" id="alv-Pb-qpg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-3O-JnK">
-                                        <rect key="frame" x="0.0" y="80" width="305" height="58.5"/>
-                                        <state key="normal" title="Button" image="2PlayerButtonNew"/>
+                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFv-Sd-G39">
+                                        <rect key="frame" x="0.0" y="64" width="300" height="49"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="27"/>
+                                        <state key="normal" title="2 PLAYER">
+                                            <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="touchTwoPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w9H-JN-J0z"/>
-                                            <segue destination="ahq-u2-lht" kind="show" id="yms-Aq-yiS"/>
+                                            <action selector="touchTwoPlayer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1kQ-pp-cyQ"/>
+                                            <segue destination="ahq-u2-lht" kind="show" id="fFU-Hq-6SE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-AZ-ZAL">
-                                        <rect key="frame" x="0.0" y="159.5" width="305" height="59"/>
-                                        <state key="normal" title="Button" image="BirdieButtonNew"/>
+                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5R-i7-lbH">
+                                        <rect key="frame" x="0.0" y="128" width="300" height="49"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="27"/>
+                                        <state key="normal" title="BIRDIES">
+                                            <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="touchBirdies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9P-YT-097"/>
-                                            <segue destination="OcJ-tM-qRl" kind="show" id="H6r-sa-H9N"/>
+                                            <action selector="touchBirdies:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PY2-sa-apc"/>
+                                            <segue destination="OcJ-tM-qRl" kind="show" id="p88-Q2-hJd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBO-4k-Ntz">
-                                        <rect key="frame" x="0.0" y="239.5" width="305" height="58.5"/>
-                                        <state key="normal" title="Button" image="HighScoresButtonNew"/>
+                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqo-0t-pnD">
+                                        <rect key="frame" x="0.0" y="192" width="300" height="49"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="27"/>
+                                        <state key="normal" title="HIGH SCORES">
+                                            <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="touchHighscore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="30h-RG-FSz"/>
-                                            <segue destination="hBl-Iv-2Cz" kind="show" id="21W-sD-Pyd"/>
+                                            <action selector="touchHighscores:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0X-la-XrM"/>
+                                            <segue destination="hBl-Iv-2Cz" kind="show" id="ldr-3a-4TM"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="86W-tg-F5H"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ak2-6F-XTj" firstAttribute="top" secondItem="AWb-AF-yKO" secondAttribute="bottom" constant="30" id="41K-pw-CWs"/>
-                            <constraint firstAttribute="bottom" secondItem="ak2-6F-XTj" secondAttribute="bottom" constant="125" id="I0J-3S-NGy"/>
-                            <constraint firstItem="ak2-6F-XTj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="224" id="K3y-XY-QnR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LLE-Cs-xRk" secondAttribute="bottom" constant="140" id="KYO-Oz-wrY"/>
                             <constraint firstItem="AWb-AF-yKO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="KyU-tZ-2b1"/>
                             <constraint firstItem="9Kc-x9-BRv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pdd-wO-K8m"/>
                             <constraint firstItem="9Kc-x9-BRv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QA8-Sk-M9Y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Kc-x9-BRv" secondAttribute="bottom" id="QFN-qa-ukL"/>
                             <constraint firstItem="z5N-r7-Dtr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-3" id="R3e-ES-WQN"/>
+                            <constraint firstItem="LLE-Cs-xRk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="21" id="SGX-oU-3Us"/>
                             <constraint firstItem="AWb-AF-yKO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="82" id="Wt4-q6-WJf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AWb-AF-yKO" secondAttribute="trailing" constant="30" id="XEA-tF-8r9"/>
                             <constraint firstAttribute="bottom" secondItem="z5N-r7-Dtr" secondAttribute="bottom" constant="-13" id="cHv-Yl-8cO"/>
-                            <constraint firstItem="ak2-6F-XTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="elO-wo-uHG"/>
                             <constraint firstAttribute="trailing" secondItem="z5N-r7-Dtr" secondAttribute="trailing" id="j9k-rX-nka"/>
                             <constraint firstAttribute="trailing" secondItem="9Kc-x9-BRv" secondAttribute="trailing" id="quM-nS-xag"/>
                             <constraint firstItem="z5N-r7-Dtr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sOW-oe-Jaa"/>
-                            <constraint firstAttribute="trailing" secondItem="ak2-6F-XTj" secondAttribute="trailing" constant="35" id="tG9-Vz-IHc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LLE-Cs-xRk" secondAttribute="trailing" constant="22" id="tDF-PW-GyN"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -156,22 +174,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhK-2E-81P">
-                                <rect key="frame" x="62" y="496" width="250" height="50"/>
+                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5r-vc-uhL">
+                                <rect key="frame" x="62" y="488" width="250" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="MainMenu"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="23"/>
+                                <state key="normal" title="PLAY AGAIN">
+                                    <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="menuButton:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="x6r-fr-Bcn"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="x4b-5m-cwN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46Z-E0-jln">
-                                <rect key="frame" x="62" y="438" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="PlayAgain"/>
-                                <connections>
-                                    <action selector="ReplayButton:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="WBX-4d-kPe"/>
-                                    <segue destination="ahq-u2-lht" kind="show" id="Enu-Ja-roa"/>
+                                    <action selector="ReplayButton:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="X7u-TZ-B97"/>
+                                    <segue destination="ahq-u2-lht" kind="show" id="ktI-bl-MdU"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-ew-dx6">
@@ -193,6 +206,19 @@
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="72"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEn-9y-qwq">
+                                <rect key="frame" x="62" y="546" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="23"/>
+                                <state key="normal" title="MAIN MENU">
+                                    <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainMenu:" destination="ndM-SJ-Feu" eventType="touchUpInside" id="1Yi-en-3nJ"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="652-qp-a6I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -485,25 +511,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99989157920000005" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El0-e6-1ms">
-                                <rect key="frame" x="62" y="449" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Button" image="PlayAgain"/>
-                                <connections>
-                                    <action selector="ReplayButton:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="V9Z-pO-Y4O"/>
-                                    <segue destination="3c4-TC-7PM" kind="presentation" id="xRr-oC-aTD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="de4-z5-i79">
-                                <rect key="frame" x="62" y="507" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="MainMenu"/>
-                                <connections>
-                                    <action selector="mainMenu:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="VfU-QL-D6C"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="b6L-pP-50S"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Game Over!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57i-zD-V3j">
                                 <rect key="frame" x="77" y="185" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -525,6 +532,32 @@
                                 <color key="textColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efm-Mw-IoK">
+                                <rect key="frame" x="62" y="489" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="23"/>
+                                <state key="normal" title="PLAY AGAIN">
+                                    <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ReplayButton:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="oS4-ld-bun"/>
+                                    <segue destination="3c4-TC-7PM" kind="show" id="61k-md-Kho"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BQ-8M-KYc">
+                                <rect key="frame" x="62" y="547" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="23"/>
+                                <state key="normal" title="MAIN MENU">
+                                    <color key="titleColor" red="0.1825547814" green="0.24366188050000001" blue="0.38068324329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainMenu:" destination="MXt-3x-ZzA" eventType="touchUpInside" id="ZaM-2K-PHo"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="CTP-CR-45l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -593,20 +626,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1PlayerButtonNew" width="680" height="125"/>
-        <image name="2PlayerButtonNew" width="680" height="125"/>
-        <image name="BirdieButtonNew" width="680" height="125"/>
-        <image name="HighScoresButtonNew" width="680" height="125"/>
-        <image name="MainMenu" width="680" height="125"/>
         <image name="NewBirdie" width="233" height="233"/>
-        <image name="PlayAgain" width="1360" height="250"/>
         <image name="badminton-facilities-18.07.04.loughborough.uk214-1" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s3c-Pf-lEA"/>
-        <segue reference="46O-Ka-4Hd"/>
-        <segue reference="yms-Aq-yiS"/>
         <segue reference="x9K-tz-vFb"/>
         <segue reference="Q3g-IM-OZp"/>
+        <segue reference="fFU-Hq-6SE"/>
+        <segue reference="652-qp-a6I"/>
+        <segue reference="alv-Pb-qpg"/>
     </inferredMetricsTieBreakers>
 </document>

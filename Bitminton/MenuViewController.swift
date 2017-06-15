@@ -13,16 +13,15 @@ class MenuViewController: UIViewController {
     
     @IBAction func touchOnePlayer(_ sender: UIButton) {
     }
-    
+   
     @IBAction func touchTwoPlayer(_ sender: UIButton) {
     }
     
     @IBAction func touchBirdies(_ sender: UIButton) {
     }
     
-    @IBAction func touchHighscore(_ sender: UIButton) {
+    @IBAction func touchHighscores(_ sender: UIButton) {
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
