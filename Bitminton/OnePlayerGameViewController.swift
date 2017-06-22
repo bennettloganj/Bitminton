@@ -25,7 +25,7 @@ class OnePlayerGameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .aspectFit
+            scene.scaleMode = .fill
         
             
             skView.presentScene(scene)

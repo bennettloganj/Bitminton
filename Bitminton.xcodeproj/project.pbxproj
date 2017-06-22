@@ -16,11 +16,7 @@
 		B92D21E81EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21D91EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf */; };
 		B92D21E91EE1C67000C8D6B7 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DA1EE1C67000C8D6B7 /* OpenSans-Italic.ttf */; };
 		B92D21EA1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DB1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf */; };
-		B92D21EB1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DC1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc */; };
-		B92D21EC1EE1C67000C8D6B7 /* STHeiti Light.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DD1EE1C67000C8D6B7 /* STHeiti Light.ttc */; };
-		B92D21ED1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DE1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc */; };
 		B92D21EE1EE1C67000C8D6B7 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21DF1EE1C67000C8D6B7 /* OpenSans-Light.ttf */; };
-		B92D21EF1EE1C67000C8D6B7 /* STHeiti Medium.ttc in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E01EE1C67000C8D6B7 /* STHeiti Medium.ttc */; };
 		B92D21F01EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E11EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf */; };
 		B92D21F11EE1C67000C8D6B7 /* Stoudmire_Resume.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E21EE1C67000C8D6B7 /* Stoudmire_Resume.pdf */; };
 		B92D21F21EE1C67000C8D6B7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B92D21E31EE1C67000C8D6B7 /* OpenSans-Regular.ttf */; };
@@ -77,11 +73,7 @@
 		B92D21D91EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../../../OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		B92D21DA1EE1C67000C8D6B7 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "../../../OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		B92D21DB1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiboldItalic.ttf"; path = "../../../OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
-		B92D21DC1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Light 11-11-28-502.ttc"; path = "../../../STHeiti Light 11-11-28-502.ttc"; sourceTree = "<group>"; };
-		B92D21DD1EE1C67000C8D6B7 /* STHeiti Light.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Light.ttc"; path = "../../../STHeiti Light.ttc"; sourceTree = "<group>"; };
-		B92D21DE1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Medium 11-11-28-535.ttc"; path = "../../../STHeiti Medium 11-11-28-535.ttc"; sourceTree = "<group>"; };
 		B92D21DF1EE1C67000C8D6B7 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Light.ttf"; path = "../../../OpenSans-Light.ttf"; sourceTree = "<group>"; };
-		B92D21E01EE1C67000C8D6B7 /* STHeiti Medium.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "STHeiti Medium.ttc"; path = "../../../STHeiti Medium.ttc"; sourceTree = "<group>"; };
 		B92D21E11EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-LightItalic.ttf"; path = "../../../OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		B92D21E21EE1C67000C8D6B7 /* Stoudmire_Resume.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Stoudmire_Resume.pdf; path = ../../../Stoudmire_Resume.pdf; sourceTree = "<group>"; };
 		B92D21E31EE1C67000C8D6B7 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -160,11 +152,7 @@
 				B92D21D91EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf */,
 				B92D21DA1EE1C67000C8D6B7 /* OpenSans-Italic.ttf */,
 				B92D21DB1EE1C67000C8D6B7 /* OpenSans-SemiboldItalic.ttf */,
-				B92D21DC1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc */,
-				B92D21DD1EE1C67000C8D6B7 /* STHeiti Light.ttc */,
-				B92D21DE1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc */,
 				B92D21DF1EE1C67000C8D6B7 /* OpenSans-Light.ttf */,
-				B92D21E01EE1C67000C8D6B7 /* STHeiti Medium.ttc */,
 				B92D21E11EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf */,
 				B92D21E21EE1C67000C8D6B7 /* Stoudmire_Resume.pdf */,
 				B92D21E31EE1C67000C8D6B7 /* OpenSans-Regular.ttf */,
@@ -369,18 +357,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CE4F481ED3313900186DEF /* TwoPlayerGameScene.sks in Resources */,
-				B92D21EB1EE1C67000C8D6B7 /* STHeiti Light 11-11-28-502.ttc in Resources */,
 				B92D21E81EE1C67000C8D6B7 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				B92D21EE1EE1C67000C8D6B7 /* OpenSans-Light.ttf in Resources */,
 				B92D21F31EE1C67000C8D6B7 /* OpenSans-Semibold.ttf in Resources */,
-				B92D21ED1EE1C67000C8D6B7 /* STHeiti Medium 11-11-28-535.ttc in Resources */,
 				B9341C791ECB659100CCFD99 /* OnePlayerGameScene.sks in Resources */,
-				B92D21EF1EE1C67000C8D6B7 /* STHeiti Medium.ttc in Resources */,
 				B92D21E91EE1C67000C8D6B7 /* OpenSans-Italic.ttf in Resources */,
 				B92D21F01EE1C67000C8D6B7 /* OpenSans-LightItalic.ttf in Resources */,
 				B92D21E51EE1C67000C8D6B7 /* OpenSans-Bold.ttf in Resources */,
 				B92D21F21EE1C67000C8D6B7 /* OpenSans-Regular.ttf in Resources */,
-				B92D21EC1EE1C67000C8D6B7 /* STHeiti Light.ttc in Resources */,
 				B92D21E71EE1C67000C8D6B7 /* OpenSans-ExtraBold.ttf in Resources */,
 				B92D21E61EE1C67000C8D6B7 /* OpenSans-BoldItalic.ttf in Resources */,
 				B9341C511ECB281600CCFD99 /* LaunchScreen.storyboard in Resources */,
@@ -586,12 +570,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F59NDUXW9A;
 				INFOPLIST_FILE = Bitminton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LoganBennett.Bitminton1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -602,12 +587,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = F59NDUXW9A;
 				INFOPLIST_FILE = Bitminton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LoganBennett.Bitminton1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
