@@ -48,14 +48,41 @@ class GameOverViewController: UIViewController {
             
             alertController.addTextField { (textField) in
                 textField.placeholder = "Your Name"
-                
+                textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
             }
             
             let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (_)->Void in
                 let textField = alertController.textFields![0]
                 self.name = textField.text!
+                
             })
             
+            
+            let shareAction = UIAlertAction(title: "Share", style: .default, handler: { (_)->Void in
+                let textField = alertController.textFields![0]
+                self.name = textField.text!
+                let string = "I just scored \(self.stringPassed) in Bitminton!"
+                let shareCard = UIImage(named: "Share Card")
+                
+                let activityViewController = UIActivityViewController(activityItems: [string, shareCard!], applicationActivities: nil)
+                activityViewController.excludedActivityTypes = [
+                    UIActivityType.addToReadingList,
+                    UIActivityType.airDrop,
+                    UIActivityType.assignToContact,
+                    UIActivityType.copyToPasteboard,
+                    UIActivityType.openInIBooks,
+                    UIActivityType.print,
+                    UIActivityType.saveToCameraRoll
+                ]
+                
+                self.present(activityViewController, animated: true, completion: nil)
+                
+            })
+            
+            doneAction.isEnabled = false
+            shareAction.isEnabled = false
+            
+            alertController.addAction(shareAction)
             alertController.addAction(doneAction)
             
             
@@ -63,6 +90,15 @@ class GameOverViewController: UIViewController {
             
             
         }
+    }
+    
+    func textChanged(_ sender: Any) {
+        let textField = sender as! UITextField
+        var resp : UIResponder! = textField
+        while !(resp is UIAlertController) { resp = resp.next }
+        let alert = resp as! UIAlertController
+        alert.actions[0].isEnabled = (textField.text != "")
+        alert.actions[1].isEnabled = (textField.text != "")
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -45,7 +45,6 @@ class HighScoreViewController: UIViewController, UITableViewDataSource, UITableV
         //maybe use if something is added to the table
         scoreArray = defaults.array(forKey: "scoreArray") as! [Int]
         
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
