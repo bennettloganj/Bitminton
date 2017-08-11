@@ -289,7 +289,8 @@ class OnePlayerGameScene: SKScene, SKPhysicsContactDelegate {
     
     func rearrangeIntArray(array: [Int], fromIndex: Int, toIndex: Int) -> [Int] {
         
-        var temp = array
+        var temp: [Int] = []
+        temp = array
         let item = temp.remove(at: fromIndex)
         temp.insert(item, at: toIndex)
         

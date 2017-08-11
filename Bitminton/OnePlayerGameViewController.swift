@@ -60,6 +60,7 @@ class OnePlayerGameViewController: UIViewController {
                 destination.stringPassed = String(scoreValue)
                 destination.count = scene?.value(forKey: "count") as! Int
                 destination.isHighScore = scene?.value(forKey: "newHighScore") as! Bool
+                destination.isHighScoreEntered = false
             }
         }
     }

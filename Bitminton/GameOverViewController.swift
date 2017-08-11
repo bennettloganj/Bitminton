@@ -17,6 +17,7 @@ class GameOverViewController: UIViewController {
     var name:String = ":("
     var isHighScore:Bool = false
     var count:Int = 0
+    var isHighScoreEntered: Bool?
     
     let defaults = UserDefaults.standard
     
@@ -43,51 +44,51 @@ class GameOverViewController: UIViewController {
         
         
         if isHighScore {
+            if !isHighScoreEntered!{
             
-            let alertController = UIAlertController(title: "New Highscore", message: "", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "New Highscore", message: "", preferredStyle: .alert)
             
-            alertController.addTextField { (textField) in
-                textField.placeholder = "Your Name"
-                textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
+                alertController.addTextField { (textField) in
+                    textField.placeholder = "Your Name"
+                    textField.addTarget(self, action: #selector(self.textChanged(_:)), for: .editingChanged)
+                }
+                
+                let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (_)->Void in
+                    let textField = alertController.textFields![0]
+                    self.name = textField.text!
+                })
+            
+            
+                let shareAction = UIAlertAction(title: "Share", style: .default, handler: { (_)->Void in
+                    let textField = alertController.textFields![0]
+                    self.name = textField.text!
+                    let string = "I just scored \(self.stringPassed) in Bitminton!"
+                    let shareCard = UIImage(named: "Share Card")
+                
+                    let activityViewController = UIActivityViewController(activityItems: [string, shareCard!], applicationActivities: nil)
+                    activityViewController.excludedActivityTypes = [
+                        UIActivityType.addToReadingList,
+                        UIActivityType.airDrop,
+                        UIActivityType.assignToContact,
+                        UIActivityType.copyToPasteboard,
+                        UIActivityType.openInIBooks,
+                        UIActivityType.print,
+                        UIActivityType.saveToCameraRoll
+                    ]
+                
+                    self.present(activityViewController, animated: true, completion: nil)
+                
+                })
+            
+                doneAction.isEnabled = false
+                shareAction.isEnabled = false
+            
+                alertController.addAction(shareAction)
+                alertController.addAction(doneAction)
+            
+            
+                self.present(alertController, animated: true, completion: nil)
             }
-            
-            let doneAction = UIAlertAction(title: "Done", style: .default, handler: { (_)->Void in
-                let textField = alertController.textFields![0]
-                self.name = textField.text!
-                
-            })
-            
-            
-            let shareAction = UIAlertAction(title: "Share", style: .default, handler: { (_)->Void in
-                let textField = alertController.textFields![0]
-                self.name = textField.text!
-                let string = "I just scored \(self.stringPassed) in Bitminton!"
-                let shareCard = UIImage(named: "Share Card")
-                
-                let activityViewController = UIActivityViewController(activityItems: [string, shareCard!], applicationActivities: nil)
-                activityViewController.excludedActivityTypes = [
-                    UIActivityType.addToReadingList,
-                    UIActivityType.airDrop,
-                    UIActivityType.assignToContact,
-                    UIActivityType.copyToPasteboard,
-                    UIActivityType.openInIBooks,
-                    UIActivityType.print,
-                    UIActivityType.saveToCameraRoll
-                ]
-                
-                self.present(activityViewController, animated: true, completion: nil)
-                
-            })
-            
-            doneAction.isEnabled = false
-            shareAction.isEnabled = false
-            
-            alertController.addAction(shareAction)
-            alertController.addAction(doneAction)
-            
-            
-            self.present(alertController, animated: true, completion: nil)
-            
             
         }
     }
@@ -103,12 +104,14 @@ class GameOverViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         
-        
-        var nameArray = defaults.array(forKey: "nameArray") as! [String]
-        nameArray.append(name)
-        nameArray = rearrangeStringArray(array: nameArray, fromIndex: nameArray.count-1, toIndex: count)
-        nameArray.remove(at: nameArray.count-1)
-        defaults.set(nameArray, forKey: "nameArray")
+        if !isHighScoreEntered!{
+            var nameArray = defaults.array(forKey: "nameArray") as! [String]
+            nameArray.append(name)
+            nameArray = rearrangeStringArray(array: nameArray, fromIndex: nameArray.count-1, toIndex: count)
+            nameArray.remove(at: nameArray.count-1)
+            defaults.set(nameArray, forKey: "nameArray")
+            isHighScoreEntered = true
+        }
     }
     
     override func didReceiveMemoryWarning() {
